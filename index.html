@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valor del puesto — Innovación y BI | Animum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f1c24;
+      --ink-soft: #2a3d4a;
+      --muted: #5a6f7c;
+      --line: #d5dee4;
+      --paper: #f7f5f1;
+      --paper-2: #eef3f6;
+      --surface: #ffffff;
+      --accent: #0b6e6e;
+      --accent-deep: #084f4f;
+      --accent-soft: #d8efef;
+      --warn: #9a5b14;
+      --warn-soft: #f5e6d0;
+      --ok: #1f6b3a;
+      --ok-soft: #dcefe3;
+      --proc: #1a4f8a;
+      --proc-soft: #dce8f5;
+      --standby: #6b4f1d;
+      --standby-soft: #f3ebd4;
+      --shadow: 0 1px 0 rgba(15, 28, 36, 0.04);
+      --radius: 10px;
+      --nav-h: 56px;
+      --max: 1240px;
+      --font: "Instrument Sans", system-ui, sans-serif;
+      --display: "Newsreader", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #d9ecec 0%, transparent 55%),
+        radial-gradient(900px 420px at 100% 0%, #e7eef4 0%, transparent 50%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 42%, var(--paper) 100%);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    a { color: var(--accent-deep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    a:hover { color: var(--accent); }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1.25rem;
+      background: rgba(247, 245, 241, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+      white-space:nowrap;
+    }
+    .nav-brand span { color: var(--accent); font-weight: 600; }
+    .nav-links {
+      display: flex;
+      gap: 0.15rem;
+      overflow-x: auto;
+      flex: 1;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.4rem 0.55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-deep);
+      background: var(--accent-soft);
+    }
+    .nav-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink-soft);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent-deep); }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+    /* HERO */
+    .hero {
+      padding: 2.4rem 0 1.8rem;
+      animation: rise 0.55s ease both;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      margin-bottom: 0.85rem;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 1.4rem;
+      height: 2px;
+      background: var(--accent);
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(2rem, 4.2vw, 3rem);
+      line-height: 1.12;
+      margin: 0 0 0.85rem;
+      max-width: 22ch;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+      max-width: 78ch;
+      margin: 0 0 1.5rem;
+    }
+    .verdict {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      background: var(--ink);
+      color: #f4f8f8;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 8px;
+      margin-bottom: 1.6rem;
+      animation: rise 0.7s 0.08s ease both;
+      line-height: 1.4;
+    }
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(180px, 1fr));
+      gap: 0.85rem;
+      animation: rise 0.75s 0.14s ease both;
+    }
+    .kpi {
+      padding: 1rem 1rem;
+      border-top: 2px solid var(--accent);
+      background: rgba(255,255,255,0.55);
+      min-width: 0;
+    }
+    .kpi strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+      white-space: nowrap;
+    }
+    .kpi span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.4;
+      text-wrap: pretty;
+    }
+
+    section {
+      margin-top: 2.75rem;
+      scroll-margin-top: calc(var(--nav-h) + 16px);
+      animation: rise 0.5s ease both;
+    }
+    .sec-head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.65rem;
+    }
+    .sec-head h2 {
+      font-family: var(--display);
+      font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.015em;
+    }
+    .sec-head p {
+      margin: 0.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: none;
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      min-width: 680px;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.9rem 1.15rem;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      text-wrap: pretty;
+    }
+    th {
+      background: #f1f5f7;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: 0; }
+    td:first-child {
+      font-weight: 600;
+      width: 36%;
+      min-width: 16rem;
+    }
+    td:last-child { width: 64%; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--shadow);
+    }
+    .panel h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .panel p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+    .callout {
+      background: linear-gradient(135deg, #0b6e6e 0%, #0a4a5c 100%);
+      color: #f3faf9;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.35rem;
+    }
+    .callout h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: #fff; }
+    .callout p { margin: 0; color: rgba(243,250,249,0.92); font-size: 0.95rem; }
+    .callout strong { color: #fff; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 1rem 0;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.8rem 0.75rem;
+      text-align: center;
+    }
+    .stat b {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent-deep);
+      line-height: 1.15;
+    }
+    .stat small {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .flow-step {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.9rem;
+    }
+    .flow-step::after {
+      content: "→";
+      position: absolute;
+      right: -0.55rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-weight: 700;
+      z-index: 1;
+      background: var(--paper);
+      width: 1.1rem;
+      text-align: center;
+    }
+    .flow-step:last-child::after { display: none; }
+    .flow-step .n {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .flow-step strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .flow-step span { font-size: 0.82rem; color: var(--muted); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+    .chip {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.28rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .acc {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      margin-bottom: 0.55rem;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .acc summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.9rem 1rem;
+      font-weight: 600;
+      user-select: none;
+    }
+    .acc summary::-webkit-details-marker { display: none; }
+    .acc summary:hover { background: #fafbfc; }
+    .acc[open] summary { border-bottom: 1px solid var(--line); background: #fafbfc; }
+    .acc .body { padding: 1rem 1.1rem 1.15rem; }
+    .acc .body p { margin: 0 0 0.7rem; color: var(--ink-soft); font-size: 0.93rem; }
+    .acc .body p:last-child { margin-bottom: 0; }
+    .chev {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .acc[open] .chev { transform: rotate(90deg); color: var(--accent); border-color: var(--accent); }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.48rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .badge-ok { background: var(--ok-soft); color: var(--ok); }
+    .badge-proc { background: var(--proc-soft); color: var(--proc); }
+    .badge-standby { background: var(--standby-soft); color: var(--standby); }
+
+    .acc-title { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+    .acc-title b { font-size: 0.98rem; }
+    .acc-title small { font-size: 0.78rem; font-weight: 500; color: var(--muted); }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+      margin: 0.75rem 0;
+    }
+    .ba {
+      border-radius: 8px;
+      padding: 0.75rem 0.85rem;
+      font-size: 0.86rem;
+    }
+    .ba.before { background: #f4ece8; color: #5c3a2e; }
+    .ba.after { background: var(--ok-soft); color: #1d4d2f; }
+    .ba strong {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      opacity: 0.85;
+    }
+
+    .btn-ficha {
+      margin-top: 0.9rem;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent-deep);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn-ficha:hover {
+      background: var(--accent-soft);
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 28, 36, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+      z-index: 50;
+    }
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(520px, 100%);
+      height: 100%;
+      background: var(--surface);
+      border-left: 1px solid var(--line);
+      box-shadow: -8px 0 32px rgba(15, 28, 36, 0.12);
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid var(--line);
+      background: #f7fafb;
+    }
+    .drawer-head h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+    .drawer-head .sub {
+      margin: 0.3rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .drawer-close {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      color: var(--ink-soft);
+      flex-shrink: 0;
+    }
+    .drawer-close:hover { border-color: var(--accent); color: var(--accent-deep); }
+    .drawer-body {
+      padding: 1.15rem 1.25rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .drawer-body h4 {
+      margin: 1.1rem 0 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent-deep);
+    }
+    .drawer-body h4:first-child { margin-top: 0; }
+    .drawer-body p, .drawer-body li {
+      margin: 0 0 0.55rem;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .drawer-body ul {
+      margin: 0 0 0.55rem;
+      padding-left: 1.15rem;
+    }
+    .drawer-body .stat-inline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .drawer-body .stat-inline span {
+      background: #f4f7f8;
+      border-radius: 6px;
+      padding: 0.45rem 0.55rem;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+    body.drawer-open { overflow: hidden; }
+
+    .impact-list {
+      margin: 0.6rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+    }
+    .impact-list li {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      padding: 0.45rem 0.55rem;
+      background: #f4f7f8;
+      border-radius: 6px;
+    }
+    .impact-list li strong {
+      color: var(--accent-deep);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding-top: 0.12rem;
+    }
+
+    .scheme {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0.5rem;
+      align-items: stretch;
+      margin: 1rem 0;
+    }
+    .scheme-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.9rem;
+      text-align: center;
+    }
+    .scheme-box strong { display: block; font-size: 0.92rem; margin-bottom: 0.2rem; }
+    .scheme-box span { font-size: 0.8rem; color: var(--muted); }
+    .scheme-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .faq {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+    }
+    .faq h3 {
+      margin: 0 0 0.45rem;
+      font-size: 0.95rem;
+      color: var(--accent-deep);
+    }
+    .faq p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+    .close-bar {
+      margin-top: 1rem;
+      padding: 1.2rem 1.3rem;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #eef5f5;
+    }
+    .close-bar p { margin: 0; font-size: 1rem; line-height: 1.45; }
+    .close-bar strong { color: #fff; }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1200px) {
+      .kpi-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .kpi-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split, .faq-grid, .before-after { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step::after { display: none; }
+      .scheme { grid-template-columns: 1fr; }
+      .scheme-arrow { transform: rotate(90deg); padding: 0.2rem 0; }
+      .impact-list li { grid-template-columns: 1fr; gap: 0.15rem; }
+      .nav-actions .btn-label { display: none; }
+      .drawer { width: min(100%, 480px); }
+    }
+    @media (max-width: 640px) {
+      .kpi-row { grid-template-columns: 1fr; }
+      .kpi strong { white-space: normal; }
+      .hero h1 { max-width: none; }
+      .hero-lead { max-width: none; }
+      .nav { padding: 0 0.75rem; }
+      main { padding: 0 1rem 3rem; }
+      .acc summary { grid-template-columns: auto 1fr; }
+      .acc summary .badge { grid-column: 2; justify-self: start; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .drawer { width: 100%; }
+      table { min-width: 0; font-size: 0.88rem; }
+      td:first-child { min-width: 0; width: 40%; }
+    }
+
+    @media print {
+      .nav, .toolbar, .btn, .btn-ficha, .drawer, .drawer-backdrop { display: none !important; }
+      body { background: #fff; }
+      .acc { break-inside: avoid; }
+      .acc:not([open]) { border: 1px solid #ccc; }
+      details { open: true; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegación del documento">
+    <div class="nav-brand">Animum <span>· Innovación y BI</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#valor">Valor</a>
+      <a href="#hubspot">HubSpot</a>
+      <a href="#ia">IA agéntica</a>
+      <a href="#casos">Casos</a>
+      <a href="#grupo">Grupo</a>
+      <a href="#cierre">Cierre</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn" type="button" id="btnCollapse" title="Colapsar todos los casos">Colapsar</button>
+      <button class="btn btn-primary" type="button" id="btnExpand" title="Expandir todos los casos">Expandir</button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="top">
+      <div class="eyebrow">Documento para dirección ejecutiva / financiera</div>
+      <h1>Valor del puesto de Innovación operativa</h1>
+      <p class="hero-lead">
+        Diseño e implantación de mejoras, automatizaciones y aplicaciones para que Ventas, Marketing, CX, Tutores y Académico trabajen con menos operativa manual y menos riesgo de error — con IA agéntica y HubSpot como infraestructuras clave.
+      </p>
+      <div class="verdict">Veredicto: inversión estructural de eficiencia, no un gasto prescindible de “proyectos internos”.</div>
+      <div class="kpi-row" aria-label="Indicadores clave">
+        <div class="kpi">
+          <strong>~70–80%</strong>
+          <span>Aumento estimado de capacidad operativa sin headcount adicional</span>
+        </div>
+        <div class="kpi">
+          <strong>140k+</strong>
+          <span>Contactos gobernados en HubSpot (CRM crítico del negocio)</span>
+        </div>
+        <div class="kpi">
+          <strong>581</strong>
+          <span>Workflows activos que automatizan captación, venta y tutores</span>
+        </div>
+        <div class="kpi">
+          <strong>~20 €/mes</strong>
+          <span>Coste licencia IA agéntica (Cursor) frente a semanas de consultoría</span>
+        </div>
+        <div class="kpi">
+          <strong>5 meses</strong>
+          <span>Proyectos de impacto con 11 años de conocimiento transversal Animum</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="valor">
+      <div class="sec-head">
+        <div>
+          <h2>Qué se consigue y qué supone</h2>
+          <p>Lectura en una tabla: el beneficio operativo y su traducción económica / de riesgo.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Qué se consigue</th>
+              <th>Qué supone para el negocio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reducción / eliminación de tareas repetitivas</td>
+              <td>Aumento de la capacidad operativa en un ~70–80%, sin contratar personal adicional.</td>
+            </tr>
+            <tr>
+              <td>Eliminación / reducción de errores + detección temprana automática</td>
+              <td>Evitar fallos en segmentación o liquidación de comisiones protege matriculaciones, reduce riesgo legal y conflictividad. Los automatismos eliminan este riesgo al 100% en los procesos cubiertos.</td>
+            </tr>
+            <tr>
+              <td>Menor dependencia de personas concretas</td>
+              <td>Blindaje operativo: los procesos quedan sistematizados. La ausencia de “quien entiende ese Excel” deja de ser pérdida crítica de conocimiento.</td>
+            </tr>
+            <tr>
+              <td>Mayor escalabilidad</td>
+              <td>Más interesados, alumnos o tutores no implican más tiempo manual ni más riesgo de error proporcional.</td>
+            </tr>
+            <tr>
+              <td>Protección de ingresos (retención anticipada)</td>
+              <td>Capacidad nueva: detectar riesgo de abandono y priorizar intervención de CX antes de la baja (p. ej. SentinEX). No solo ahorra triaje: resguarda matrículas ya vendidas.</td>
+            </tr>
+            <tr>
+              <td>Calidad de datos + control de negocio</td>
+              <td>Datos CRM accionables (p. ej. teléfonos/WhatsApp fiables → +20% contacto útil estimado) y gobierno de comisiones/regularizaciones con trazabilidad: más conversión comercial y menos conflictividad, sin hinchar headcount.</td>
+            </tr>
+            <tr>
+              <td>Soluciones ad hoc en tiempo récord</td>
+              <td>Ahorro frente a consultorías externas, horas de desarrollo o licencias de terceros para problemas específicos de la escuela.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="hubspot">
+      <div class="sec-head">
+        <div>
+          <h2>HubSpot: infraestructura estratégica</h2>
+          <p>No es “solo un CRM”: concentra datos, procesos y automatismos de la escuela.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h3>Por qué importa estratégicamente</h3>
+        <p>
+          En HubSpot vive la información de interesados, clientes y proveedores (p. ej. tutores) <strong>y</strong> una infraestructura completa de workflows, objetos (Contactos, Negocio, Lead, Negocio Tutor), formularios, secuencias y correos con contenido inteligente que automatizan captación, venta/matriculación, captación de tutores y la gestión de cada participación docente.
+          De ahí la importancia de un perfil experto en HubSpot <strong>y</strong> capaz de auditar, corregir bugs y construir mejoras — dentro del propio HubSpot o con aplicaciones web ad hoc.
+        </p>
+      </div>
+
+      <div class="stat-grid" aria-label="Escala actual del CRM">
+        <div class="stat"><b>140.369</b><small>Contactos · 682 props.</small></div>
+        <div class="stat"><b>79.350</b><small>Negocios · 365 props.</small></div>
+        <div class="stat"><b>23.520</b><small>Leads · 241 props.</small></div>
+        <div class="stat"><b>4.545</b><small>Negocios tutor · 192 props.</small></div>
+        <div class="stat"><b>581</b><small>Workflows</small></div>
+        <div class="stat"><b>88</b><small>Formularios</small></div>
+        <div class="stat"><b>189</b><small>Secuencias</small></div>
+        <div class="stat"><b>~1.480</b><small>Props. en catálogo de auditoría</small></div>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Procesos que dependen de este ecosistema</h3>
+          <div class="chips">
+            <span class="chip">Captación de interesados</span>
+            <span class="chip">Venta y matriculación</span>
+            <span class="chip">Lead scoring / cualificación</span>
+            <span class="chip">Captación de tutores</span>
+            <span class="chip">Propuesta y gestión docente</span>
+            <span class="chip">Comunicaciones automatizadas</span>
+          </div>
+          <p style="margin-top:0.9rem">
+            Sin mapa vivo (wiki-Hubspot) ni auditoría forense (Hubspot-Auditor), cada cambio sensible es lento, incompleto y dependiente de “quien se acuerda de cómo está montado”.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Labor sobre HubSpot</h3>
+          <p>
+            Expertise nativo (objetos, workflows, formularios, secuencias, correos inteligentes) + herramientas propias de gobierno: wiki-Hubspot, Hubspot-Auditor, Syncform, TW-Scheduler y rediseños de Lead / scoring.
+          </p>
+          <p style="margin-top:0.7rem">
+            Resultado: más mejoras al año, menos roturas de captación y menos dependencia de consultoría externa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ia">
+      <div class="sec-head">
+        <div>
+          <h2>IA agéntica: el multiplicador</h2>
+          <p>No es una moda: es el modo de trabajo que hace viable este volumen de entrega.</p>
+        </div>
+      </div>
+
+      <div class="flow" aria-label="Cadena de valor con IA">
+        <div class="flow-step">
+          <div class="n">01 · Conocimiento</div>
+          <strong>Oráculo + wiki-Hubspot</strong>
+          <span>Mapas vivos del datawarehouse/Lumen y del CRM para diseñar sin improvisar.</span>
+        </div>
+        <div class="flow-step">
+          <div class="n">02 · Ejecución</div>
+          <strong>Cursor (IA agéntica)</strong>
+          <span>Desarrollo de apps, auditorías y automatismos en días/semanas, no meses.</span>
+        </div>
+        <div class="flow-step">
+          <div class="n">03 · Resultado</div>
+          <strong>Impacto en negocio</strong>
+          <span>Paneles Lumen, control DWH, mejoras HubSpot y menos riesgo operativo.</span>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:1rem">
+        <div class="panel">
+          <h3>Coste vs. capacidad</h3>
+          <p>
+            Licencia actual de Cursor: <strong>~20 €/mes</strong> por licencia — irrisorio frente a días/semanas de descubrimiento técnico, consultoría externa o headcount administrativo para absorber el mismo volumen.
+          </p>
+          <p style="margin-top:0.7rem">
+            Ejemplo: TW-Scheduler se desarrolló en menos de una semana con apoyo de IA agéntica. Oráculo y wiki-Hubspot reducen la investigación previa de cada proyecto de días a horas.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Activo real</h3>
+          <p>
+            La herramienta multiplica velocidad. El activo es la capacidad de <strong>detectar el cuello de botella, diseñar el proceso correcto e implantarlo</strong> — con 11 años de conocimiento transversal de la escuela.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="sec-head">
+        <div>
+          <h2>Pruebas de impacto en negocio</h2>
+          <p>Proyectos de los últimos 5 meses. Expanda solo lo que le interese; lo esencial está en el título.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button class="btn" type="button" id="btnCollapse2">Colapsar todos</button>
+        <button class="btn" type="button" id="btnExpand2">Expandir todos</button>
+      </div>
+
+      <div id="accordionList">
+
+        <details class="acc" open>
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Oráculo</b>
+              <small>Ahorro de costes y multiplicación de capacidad sobre Datawarehouse y Lumen</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir una solución sin improvisar.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Reduce días/semanas de descubrimiento técnico a horas de consulta. Base de SentinEX y Comisiones en Lumen.</span></li>
+              <li><strong>Seguro</strong><span>Menos riesgo de construir sobre datos malentendidos (métricas, comisiones, alertas).</span></li>
+              <li><strong>Grupo</strong><span>Replicable como “wiki-DWH” por escuela o DWH central; Innovación/BI como consultor interno del grupo.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="oraculo">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>wiki-Hubspot</b>
+              <small>Mapa vivo del CRM — Ahorro de costes y multiplicación de la capacidad de mejora del CRM</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Cartografía qué hay en HubSpot, cómo está conectado y qué se rompe si se toca. Caso real: normalizar &gt;140.000 teléfonos/WhatsApp en 5 días (&gt;95% fiabilidad estimada). Sin wiki, habría exigido semanas de trabajo full-time.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Análisis de impacto de días/semanas → minutos/horas. Más mejoras CRM al año con el mismo equipo.</span></li>
+              <li><strong>Seguro</strong><span>Reduce riesgo de romper captación, envíos o reglas comerciales.</span></li>
+              <li><strong>Grupo</strong><span>Modelo “wiki-CRM” replicable en otras escuelas con HubSpot (o CRM conectable).</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="wiki">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Hubspot-Auditor</b>
+              <small>Auditoría forense — Ahorro de costes y reducción de riesgo operativo en automatismos del CRM</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Complementa a wiki-Hubspot: responde “quién cambió qué, cuándo, con qué workflow y qué se rompe si lo modifico”. Catálogo operativo: 4 objetos CRM, ~1.480 propiedades, 167 workflows (ampliable).</p>
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>Análisis de impacto o bug forense: 1–3 días de ida y vuelta entre equipos.</div>
+              <div class="ba after"><strong>Ahora</strong>Minutos/horas; diagnóstico con evidencia (~15–60 min en casos recurrentes).</div>
+            </div>
+            <ul class="impact-list">
+              <li><strong>Fiabilidad</strong><span>&gt;90% en atribución de cambios (catálogo alineado); ~85–95% cobertura útil en impacto vs. auditoría manual incompleta.</span></li>
+              <li><strong>Grupo</strong><span>Capa de “auditoría CRM” compartida frente a consultorías externas por bug o cambio sensible.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="auditor">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Validación de teléfonos y WhatsApp</b>
+              <small>Multiplicación de la capacidad comercial</small>
+            </span>
+            <span class="badge badge-ok">Finalizado</span>
+          </summary>
+          <div class="body">
+            <p>Limpieza y normalización de más de 140.000 contactos de 40 países en 5 días, con &gt;95% de fiabilidad estimada para Ventas. Posible gracias al mapa de impacto de wiki-Hubspot.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Si Ventas no pierde tiempo con números erróneos, la tasa de contacto útil sube más de un 20% → más matriculaciones con el mismo equipo.</span></li>
+              <li><strong>Próximo</strong><span>Sistema automático de prevención + revisión diaria de nuevos contactos y prefijos.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="telefonos">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>TW-Scheduler</b>
+              <small>Aumento de la capacidad operativa y eliminación de errores</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>15 min – 2 h de preparación cada 5–6 semanas (según bloques que arrancan).</div>
+              <div class="ba after"><strong>Ahora</strong>~5–10 minutos, una sola vez al año. Envíos automatizados desde el CRM.</div>
+            </div>
+            <p>Personaliza pautas docentes por bloque formativo, festivos y tipo de tutor. Elimina olvidos y desajustes de calendario.</p>
+            <button type="button" class="btn-ficha" data-ficha="tw">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Syncform HubSpot</b>
+              <small>Automatización por cambios en catálogo formativo — Aumento de la capacidad operativa y eliminación de errores</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Automatiza tareas internas de Marketing al añadir/modificar/eliminar disciplina o programa, y al gestionar bajas/vacaciones de asesores comerciales.</p>
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>~45 min + checklist Excel frágil por ejecución.</div>
+              <div class="ba after"><strong>Ahora</strong>~5 min, centralizado, con validación en tiempo real, log y posibilidad de deshacer.</div>
+            </div>
+            <button type="button" class="btn-ficha" data-ficha="syncform">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>SentinEX</b>
+              <small>Protección de ingresos — Detección temprana de riesgo de abandono</small>
+            </span>
+            <span class="badge badge-proc">En proceso</span>
+          </summary>
+          <div class="body">
+            <p>No es un bot de clasificación de tickets: es alerta temprana de bajas. Clasifica y prioriza con contexto 360º del alumno y valora riesgo de abandono; ejecución diaria automática.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>CX interviene antes de la anulación. Protege ingresos y reputación; reduce triaje manual.</span></li>
+              <li><strong>Capacidad</strong><span>Control de negocio que antes no existía de forma sistemática.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="sentinex">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Comisiones en Lumen</b>
+              <small>Transparencia, liquidación y regularizaciones automáticas</small>
+            </span>
+            <span class="badge badge-proc">En proceso</span>
+          </summary>
+          <div class="body">
+            <p>Cálculo automático de comisiones y regularizaciones + evolución en tiempo real (bruto / regularizado / neto) para comerciales y managers, con trazabilidad.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Menos horas en Excel, cero errores de cálculo, menos opacidad y conflictividad; mayor motivación comercial.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="comisiones">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Migración al objeto Lead</b>
+              <small>Precisión del funnel · 1 lead = 1 interés formativo</small>
+            </span>
+            <span class="badge badge-standby">Pendiente go-live</span>
+          </summary>
+          <div class="body">
+            <p>Infraestructura y procesos ya diseñados e implantados en HubSpot para migrar el engranaje comercial del Contacto al Lead. Pendiente de validación de Dirección de Marketing para “encender” el nuevo modelo.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Datos accionables por interés real; base correcta para scoring, asignación y conversión por producto/disciplina.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="lead">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Cualificación y Lead Scoring</b>
+              <small>Optimización del esfuerzo comercial hacia leads de mayor valor</small>
+            </span>
+            <span class="badge badge-standby">Pendiente validación</span>
+          </summary>
+          <div class="body">
+            <p>Score dinámico en tiempo real desde la primera solicitud; segmenta propensión a matriculación. Implementado; pendiente de valoración de Marketing antes de activación plena.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Menos tiempo en leads fríos; mejor alineación Marketing–Ventas; más eficiencia sin incrementar masa salarial.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="scoring">Ver ficha completa</button>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="panel" style="margin-top:1rem">
+        <h3>Escalabilidad sin incrementar masa salarial</h3>
+        <p>
+          Con los sistemas implantados y en proceso, si mañana se duplica el volumen de interesados, alumnos o tutores, la infraestructura absorbe el impacto de forma automática: no hace falta contratar más personal administrativo ni de soporte en la misma proporción.
+        </p>
+      </div>
+    </section>
+
+    <section id="grupo">
+      <div class="sec-head">
+        <div>
+          <h2>Extrapolación al grupo AD Education</h2>
+          <p>Animum como laboratorio práctico; Innovación y BI como consultoría interna compartida.</p>
+        </div>
+      </div>
+
+      <div class="scheme" aria-label="Modelo de transferencia al grupo">
+        <div class="scheme-box">
+          <strong>Animum</strong>
+          <span>Laboratorio: procesos ya sistematizados y medidos</span>
+        </div>
+        <div class="scheme-arrow" aria-hidden="true">→</div>
+        <div class="scheme-box">
+          <strong>Playbooks</strong>
+          <span>Método: priorizar, automatizar, documentar, auditar</span>
+        </div>
+        <div class="scheme-arrow" aria-hidden="true">→</div>
+        <div class="scheme-box">
+          <strong>Grupo</strong>
+          <span>Servicio interno vs. consultorías externas repetidas</span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Capacidad transferible</th>
+              <th>Utilidad potencial en el grupo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diseño de procesos en HubSpot (captación, scoring, ciclo docente)</td>
+              <td>Escuelas que unifican o modernizan CRM comercial/académico</td>
+            </tr>
+            <tr>
+              <td>Wiki-CRM + auditoría forense de automatismos</td>
+              <td>Gobierno seguro del CRM sin depender de consultoría por cada cambio</td>
+            </tr>
+            <tr>
+              <td>Wiki-DWH (Oráculo) + paneles Lumen</td>
+              <td>Acelerar BI y control de negocio sobre datos reales</td>
+            </tr>
+            <tr>
+              <td>Automatización de comunicaciones y calendarios académicos</td>
+              <td>Menos carga administrativa con muchos docentes/bloques</td>
+            </tr>
+            <tr>
+              <td>Triaje / riesgo de abandono (SentinEX)</td>
+              <td>Protección de ingresos en CX con volumen de incidencias</td>
+            </tr>
+            <tr>
+              <td>Desarrollo con IA agéntica</td>
+              <td>Soluciones ad hoc o modulares reutilizables entre empresas del grupo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="cierre">
+      <div class="sec-head">
+        <div>
+          <h2>Por qué es una inversión necesaria</h2>
+          <p>Lógica de control de gestión, en cuatro puntos y dos respuestas directas.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-bottom:1rem">
+        <table>
+          <thead>
+            <tr>
+              <th>Argumento</th>
+              <th>Lectura económica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Efecto palanca</td>
+              <td>Un solo perfil impacta Ventas, Marketing, CX, Tutores y Académico. Cortar el puesto reintroduce coste operativo disperso en varias áreas.</td>
+            </tr>
+            <tr>
+              <td>Errores evitados</td>
+              <td>Fallos en CRM, envíos o comisiones cuestan reputación, matriculaciones y conflictividad — no solo horas.</td>
+            </tr>
+            <tr>
+              <td>Capacidades nuevas</td>
+              <td>Riesgo de baja, auditoría CRM, mapa del DWH: no se sustituyen con “más Excels”.</td>
+            </tr>
+            <tr>
+              <td>Alternativas más caras</td>
+              <td>Más headcount administrativo, consultoría externa, o “no hacer” y pagar en horas eternas y techos de escala.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq">
+          <h3>¿Valor diferencial en Animum?</h3>
+          <p>Sistemas estables: menos horas, menos errores, más escalabilidad y control (abandono, comisiones, datos CRM). Expertise HubSpot + herramientas propias de auditoría y apps ad hoc.</p>
+        </div>
+        <div class="faq">
+          <h3>¿Valor para el grupo?</h3>
+          <p>Método exportable y servicio interno: priorizar cuellos de botella, automatizar y dejar procesos que no dependan de una sola persona — con IA agéntica a coste irrisorio.</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:0.75rem">
+        <h3>Pregunta útil para decidir</h3>
+        <p>¿Cuánto costaría, en horas de otros departamentos + riesgo de error + pérdida de escala, volver al modelo anterior solo en TW-Scheduler + Syncform + teléfonos?</p>
+      </div>
+
+      <div class="close-bar">
+        <p>
+          <strong>Petición:</strong> mantener e invertir en esta función de Innovación operativa — no como “gasto de proyectos”, sino como <strong>capacidad estructural de eficiencia</strong> para Animum y, si el grupo lo requiere, como consultoría interna de digitalización y CRM/BI.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    David Luna — Innovación y BI · Animum · Fuente: «Proyectos Innovacion - Justificación» · Documento confidencial para dirección ·
+    <a href="#top">Volver arriba</a>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="fichaDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer-head">
+      <div>
+        <h3 id="drawerTitle">Ficha</h3>
+        <p class="sub" id="drawerSub"></p>
+      </div>
+      <button type="button" class="drawer-close" id="drawerClose" aria-label="Cerrar">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <script>
+    (function () {
+      const details = () => Array.from(document.querySelectorAll("#accordionList details.acc"));
+
+      function setAll(open) {
+        details().forEach((d) => { d.open = open; });
+      }
+
+      ["btnExpand", "btnExpand2"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("click", () => setAll(true));
+      });
+      ["btnCollapse", "btnCollapse2"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("click", () => setAll(false));
+      });
+
+      const links = Array.from(document.querySelectorAll("#navLinks a"));
+      const sections = links
+        .map((a) => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const id = "#" + entry.target.id;
+            links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === id));
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      );
+      sections.forEach((s) => io.observe(s));
+
+      window.addEventListener("beforeprint", () => setAll(true));
+
+      /* —— Fichas completas (fuente: documento Justificación) —— */
+      const FICHAS = {
+        oraculo: {
+          title: "Oráculo",
+          sub: "En uso · Ahorro de costes y multiplicación de la capacidad de desarrollo sobre el Datawarehouse y Lumen",
+          html: `
+            <h4>Qué es</h4>
+            <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir una solución sin improvisar. Se usa como base de consulta y diseño; el beneficio llega a Ventas, Marketing, CX, Académico y Tutores, porque acelera paneles y aplicaciones internas basadas en datos reales de la escuela.</p>
+            <h4>Casos reales</h4>
+            <p>Ha sido base de consulta y diseño para proyectos de impacto directo como SentinEX (protección de ingresos por abandono) y Comisiones en Lumen (transparencia y liquidación). Sin Oráculo, cada iniciativa habría exigido una investigación y auditoría del datawarehouse mucho más larga, cara en tiempo y dependiente de “quien se acuerda de cómo está montado”.</p>
+            <h4>Impacto económico (ahorro de costes + capacidad)</h4>
+            <ul>
+              <li>Reduce días/semanas de descubrimiento técnico por cada proyecto a horas de consulta sobre un mapa ya curado → más soluciones DWH/Lumen al año con el mismo equipo de Innovación/BI.</li>
+              <li>Evita rehacer el mismo trabajo de investigación en cada proyecto y elimina la dependencia de consultoría externa o de conocimiento atrapado en “el que montó el datawarehouse” o “el que diseñó ese panel en Lumen”.</li>
+              <li>Seguro operativo: menos riesgo de construir sobre datos malentendidos (métricas incorrectas, comisiones erróneas, alertas que no disparan cuando toca).</li>
+            </ul>
+            <h4>Capacidad nueva</h4>
+            <p>No solo documenta; multiplica la capacidad de diseñar e implantar mejoras “ad hoc” sobre el Datawarehouse y Lumen, en lugar de empezar de cero cada vez.</p>
+            <h4>Extrapolación al grupo AD Education</h4>
+            <p>El mismo modelo se puede replicar como “wiki-DWH” (el Oráculo de cada escuela o del datawarehouse central del grupo) para auditar y acelerar soluciones de datos e inteligencia de negocio sin gastar en consultorías externas en cada empresa. El departamento de Innovación y BI puede convertirse en consultor interno del grupo, desarrollando soluciones “ad hoc” o modulares reutilizables.</p>`
+        },
+        wiki: {
+          title: "wiki-Hubspot",
+          sub: "En uso · Mapa vivo del CRM — Ahorro de costes y multiplicación de la capacidad de mejora del CRM",
+          html: `
+            <h4>Qué es</h4>
+            <p>Mapa vivo de la configuración HubSpot de Animum: qué hay, cómo está conectado y qué se rompe si se toca algo. Herramienta de consulta y diseño; el beneficio llega a Ventas, Marketing, CX, Académico y Tutores, porque cualquier mejora o corrección en el CRM se hace más rápido y con menos riesgo de romper captación o automatismos.</p>
+            <h4>Escala que gobierna actualmente</h4>
+            <div class="stat-inline">
+              <span><b>140.369</b> contactos · 682 props.</span>
+              <span><b>79.350</b> negocios · 365 props.</span>
+              <span><b>23.520</b> leads · 241 props.</span>
+              <span><b>4.545</b> negocios tutor · 192 props.</span>
+              <span><b>581</b> workflows</span>
+              <span><b>88</b> formularios · <b>189</b> secuencias</span>
+            </div>
+            <p>Sin un sistema de este tipo, auditar impacto es lento, incompleto y depende de “quien se acuerda de cómo está montado HubSpot”.</p>
+            <h4>Caso real</h4>
+            <p>Normalizar &gt;140.000 teléfonos/WhatsApp en 5 días (fiabilidad estimada &gt;95% para Ventas). Sin wiki-Hubspot, esa auditoría habría necesitado de varias personas trabajando full time durante semanas.</p>
+            <h4>Impacto económico (ahorro de costes + capacidad)</h4>
+            <ul>
+              <li>Menos dependencia de consultoría externa o de auditorías manuales largas cada vez que hay que cambiar segmentación, formularios o automatismos. Capacidad interna reutilizable.</li>
+              <li>Estimación conservadora: un análisis de impacto “a mano” sobre un cambio sensible en un CRM de este tamaño suele consumir días o semanas de persona especializada; con wiki-Hubspot pasa a minutos/horas. Eso multiplica cuántas mejoras se pueden acometer al año con el mismo equipo.</li>
+              <li>Seguro operativo: reduce el riesgo de romper captación, envíos o reglas comerciales por un cambio mal dimensionado. Ese error no solo cuesta horas: puede costar matrículas, reputación y conflictividad interna.</li>
+            </ul>
+            <h4>Capacidad nueva</h4>
+            <p>Base para diseñar e implantar soluciones “ad hoc” sobre un CRM bien cartografiado, en lugar de improvisar sobre un sistema opaco.</p>
+            <h4>Extrapolación al grupo AD Education</h4>
+            <p>Si otra escuela usa HubSpot (u otro CRM conectable por API/MCP), se puede replicar el modelo como “wiki-CRM” propia para (1) auditorías y consultas seguras y (2) acelerar el diseño de automatismos y apps internas, como servicio compartido de Innovación/BI frente a consultorías externas repetidas en cada centro.</p>`
+        },
+        auditor: {
+          title: "Hubspot-Auditor",
+          sub: "En uso · Auditoría forense — Ahorro de costes y reducción de riesgo operativo en automatismos del CRM",
+          html: `
+            <h4>Qué es</h4>
+            <p>Aplicación de auditoría forense y análisis de impacto seguro sobre el CRM: permite saber qué workflows tocan qué propiedades, reconstruir el rastro de cambios sobre un registro y diagnosticar conflictos multi-workflow antes de tocar (o al investigar un bug en) la captación, el ciclo comercial o las automatizaciones.</p>
+            <p>Complementa a wiki-Hubspot: wiki cartografía “qué hay y cómo está conectado”; el Auditor responde “quién cambió qué, cuándo, con qué workflow y qué se rompe si lo modifico”.</p>
+            <h4>Alcance actual de auditoría</h4>
+            <ul>
+              <li>4 objetos CRM: Contactos, Negocios, Leads y Negocios Tutor.</li>
+              <li>~1.480 propiedades en catálogo (682 + 365 + 241 + 192).</li>
+              <li>167 workflows en el catálogo operativo (previsto ampliar a todo el ecosistema HubSpot).</li>
+              <li>Base de registros: ~140.000 contactos, ~79.000 negocios, ~23.500 leads y ~4.500 negocios tutor.</li>
+            </ul>
+            <h4>Dos usos de negocio</h4>
+            <ul>
+              <li><strong>Análisis de impacto previo:</strong> antes de crear, editar o desactivar un workflow, identifica propiedades impactadas y riesgos de colisión con otras automatizaciones.</li>
+              <li><strong>Resolución forense de bugs:</strong> ante un valor incorrecto, reconstruye el historial, atribuye origen (workflow vs usuario vs otras fuentes) y reduce el diagnóstico a evidencia.</li>
+            </ul>
+            <h4>Impacto económico — estimación conservadora</h4>
+            <ul>
+              <li>Análisis de impacto “a mano”: de uno a varios días full-time de persona especializada → minutos/horas con el Auditor.</li>
+              <li>Investigación forense de bug: suele consumir 1–3 días de ida y vuelta entre Innovación/BI, Marketing y Ventas → estimación ~15–60 minutos en la mayoría de casos recurrentes (con rastro forense + diagnóstico asistido por IA).</li>
+              <li>Fiabilidad estimada: &gt;90% en atribución de cambios cuando catálogo e historial están alineados; ~85–95% de cobertura útil en análisis de impacto frente a una auditoría manual incompleta.</li>
+            </ul>
+            <h4>Seguro operativo y capacidad nueva</h4>
+            <p>Menos riesgo de romper captación, scoring, asignación comercial o reglas de ciclo de vida. Convierte la resolución de incidencias CRM y el rediseño de automatismos en un proceso repetible y auditable.</p>
+            <h4>Extrapolación al grupo AD Education</h4>
+            <p>El mismo modelo (catálogo de workflows + propiedades + rastro forense + diagnóstico IA) se puede replicar como capa de “auditoría CRM” en otras escuelas con HubSpot, como servicio compartido frente a consultorías externas.</p>`
+        },
+        telefonos: {
+          title: "Validación de teléfonos y WhatsApp",
+          sub: "Finalizado · Multiplicación de la capacidad comercial",
+          html: `
+            <h4>Qué se hizo</h4>
+            <p>Limpieza y normalización de más de 140.000 contactos de 40 países en 5 días, con un &gt;95% de fiabilidad estimada para Ventas. Posible gracias al mapa de impacto de wiki-Hubspot.</p>
+            <h4>Impacto</h4>
+            <p>Si el equipo comercial no pierde el tiempo llamando a números erróneos, la tasa de contacto útil sube más de un 20%. Más llamadas útiles = más matriculaciones con el mismo equipo de ventas.</p>
+            <h4>Próximo proyecto</h4>
+            <p>Diseñar un sistema automático que, por un lado, reduzca/elimine la posibilidad de introducir números de teléfono y WhatsApp incorrectos y, por otro, revise a diario los nuevos contactos añadidos al CRM, compruebe la validez de estos números y les añada el prefijo correspondiente.</p>`
+        },
+        tw: {
+          title: "TW-Scheduler",
+          sub: "En uso · Aumento de la capacidad operativa y eliminación de errores",
+          html: `
+            <h4>Qué es</h4>
+            <p>Automatización de la programación y envío de correos de Tips &amp; Warnings semanales a los tutores participantes, personalizando las pautas docentes (criterios de corrección, errores habituales y contenidos de la semana) según el bloque formativo en curso.</p>
+            <h4>Impacto</h4>
+            <p>Ahorro drástico de tiempo y eliminación del riesgo de error. Transforma un proceso manual recurrente (de 15 minutos a 2 horas cada 5–6 semanas) en una gestión automatizada de apenas ~5 minutos una sola vez al año. La automatización elimina riesgos de errores en la configuración del envío.</p>`
+        },
+        syncform: {
+          title: "Syncform HubSpot",
+          sub: "En uso · Automatización por cambios en catálogo formativo — Aumento de la capacidad operativa y eliminación de errores",
+          html: `
+            <h4>Qué es</h4>
+            <p>Automatización centralizada de diferentes tareas operativas internas realizadas por el equipo de marketing cuando:</p>
+            <ul>
+              <li>Se añade, modifica o elimina una disciplina o programa formativo del catálogo de la escuela.</li>
+              <li>Un asesor comercial se va/vuelve de vacaciones o causa baja en la escuela.</li>
+            </ul>
+            <h4>Impacto</h4>
+            <p>Ahorro de tiempo y eliminación del riesgo de error. Transforma un proceso manual frágil, lento, fragmentado y proclive a errores (~45 min + checklist Excel) en una gestión centralizada, automatizada y con validación en tiempo real (~5 min, con log y posibilidad de deshacer).</p>`
+        },
+        sentinex: {
+          title: "SentinEX",
+          sub: "En proceso · Protección de ingresos — Detección temprana de riesgo de abandono",
+          html: `
+            <h4>Qué es</h4>
+            <p>No es un bot de clasificación de tickets. Es un sistema de alerta temprana de bajas de alumnos. Al detectar el grado de enfado y el riesgo de abandono en tiempo real, permite a CX intervenir antes de que el alumno anule su matrícula y abandone.</p>
+            <p>Clasifica y prioriza tickets con contexto 360º del alumno y valora riesgo de baja. Ejecución diaria automática.</p>
+            <h4>Impacto</h4>
+            <p>Prevención y reducción de bajas/abandonos de alumnos, así como de quejas y malas experiencias que reviertan en mala imagen y comentarios negativos sobre la escuela.</p>
+            <h4>Capacidad nueva</h4>
+            <p>No solo ahorra triaje: protege ingresos.</p>`
+        },
+        comisiones: {
+          title: "Comisiones en Lumen",
+          sub: "En proceso · Transparencia y eficiencia operativa",
+          html: `
+            <h4>Qué es</h4>
+            <p>Automatización del cálculo de las comisiones y regularizaciones + visualización de la evolución de las comisiones en tiempo real, eliminando la opacidad y las horas de revisión manual en Excels.</p>
+            <h4>Impacto</h4>
+            <ul>
+              <li>Reducción de tiempos de gestión y cero errores de cálculo.</li>
+              <li>Mayor motivación del equipo comercial, al poder consultar en vivo la evolución de sus comisiones por ventas.</li>
+              <li>Comerciales y managers ven bruto / regularizado / neto con trazabilidad.</li>
+            </ul>`
+        },
+        lead: {
+          title: "Migración al objeto Lead",
+          sub: "Desarrollado; pendiente de go-live · Precisión del funnel y trazabilidad del interés comercial",
+          html: `
+            <h4>Problema</h4>
+            <p>Hasta ahora, todo el proceso de captación y gestión comercial (interés, formularios, llamadas/videollamadas, correos, envío de temarios, etapas del funnel, etc.) se centraliza en el objeto Contacto. Eso fuerza a tratar como un único recorrido lo que en la práctica son intereses distintos a lo largo de la vida del interesado.</p>
+            <h4>Solución</h4>
+            <p>Trasladar ese engranaje (workflows, formularios, registro de resultados, etapas de captación/venta y automatismos asociados) al objeto Lead (1 lead = 1 interés formativo concreto), asociado al Contacto correspondiente. Un mismo contacto puede acumular varios leads con evolución independiente: unos se cierran en matriculación y otros no.</p>
+            <h4>Labor ya realizada</h4>
+            <p>Diseño e implantación en HubSpot de la infraestructura y los procesos necesarios para migrar del modelo basado en Contactos al modelo basado en Leads, manteniendo la trazabilidad contacto–interés.</p>
+            <h4>Estado</h4>
+            <p>Desarrollado y en stand-by, a la espera de que Dirección de Marketing pueda validar y dar el ok para la última fase (“encender” el nuevo sistema basado en Lead y “apagar” el actual sistema basado en Contactos).</p>
+            <h4>Impacto de negocio</h4>
+            <p>Datos comerciales más limpios y accionables; reporting y priorización por interés real (no por “contacto genérico”); menos fricción y errores al mezclar estados de distintas intenciones de compra; base correcta para scoring, asignación y medición de conversión por producto/disciplina.</p>
+            <h4>Capacidad nueva</h4>
+            <p>El CRM deja de modelar “personas con un único funnel” y pasa a modelar relación + intereses, que es como funciona realmente la captación en Animum. Sin este rediseño, cualquier mejora posterior de scoring, automatismos o reporting comercial se construye sobre una estructura que no refleja el negocio.</p>`
+        },
+        scoring: {
+          title: "Cualificación y Lead Scoring",
+          sub: "Desarrollado; pendiente de validación · Optimización del esfuerzo comercial hacia leads de mayor valor",
+          html: `
+            <h4>Qué es</h4>
+            <p>Diseño e implementación de una arquitectura de puntuación y segmentación automatizada basada en workflows, campos calculados y formularios integrados.</p>
+            <p>El modelo calcula en tiempo real un score dinámico desde la primera solicitud de información, evaluando variables operativas e interacciones del prospecto para categorizar su propensión a matriculación y activar segmentaciones precisas que optimicen el impacto comercial y de marketing (quién merece atención inmediata vs. nurturing).</p>
+            <h4>Estado</h4>
+            <p>Implementado y en espera de que Dirección de Marketing valore y valide el scoring propuesto antes de su activación plena en la operativa.</p>
+            <h4>Impacto de negocio</h4>
+            <p>Menos tiempo comercial en leads fríos; más foco en perfiles con mayor cercanía a compra; mejor alineación Marketing–Ventas sobre “qué es un lead cualificado”; mayor eficiencia del mismo equipo comercial sin incrementar masa salarial.</p>
+            <h4>Capacidad nueva</h4>
+            <p>Convierte la cualificación de un criterio subjetivo/manual en un sistema repetible, medible y mejorable.</p>
+            <h4>Próximo refuerzo bajo estudio</h4>
+            <p>Evaluar un bot ya existente, capaz de conectarse al CRM, diseñado para la detección y ranking de intención de compra a partir de señales e interacciones en HubSpot, para complementar o superar el scoring actual (siempre con supervisión humana: propone borrador de email personalizado, pero no realiza envíos sin validación previa).</p>`
+        }
+      };
+
+      const backdrop = document.getElementById("drawerBackdrop");
+      const drawer = document.getElementById("fichaDrawer");
+      const drawerTitle = document.getElementById("drawerTitle");
+      const drawerSub = document.getElementById("drawerSub");
+      const drawerBody = document.getElementById("drawerBody");
+      const drawerClose = document.getElementById("drawerClose");
+
+      function openFicha(id) {
+        const f = FICHAS[id];
+        if (!f) return;
+        drawerTitle.textContent = f.title;
+        drawerSub.textContent = f.sub;
+        drawerBody.innerHTML = f.html;
+        backdrop.hidden = false;
+        requestAnimationFrame(() => {
+          backdrop.classList.add("open");
+          drawer.classList.add("open");
+        });
+        drawer.setAttribute("aria-hidden", "false");
+        document.body.classList.add("drawer-open");
+        drawerClose.focus();
+      }
+
+      function closeFicha() {
+        backdrop.classList.remove("open");
+        drawer.classList.remove("open");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("drawer-open");
+        setTimeout(() => { backdrop.hidden = true; }, 250);
+      }
+
+      document.querySelectorAll(".btn-ficha").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openFicha(btn.getAttribute("data-ficha"));
+        });
+      });
+      drawerClose.addEventListener("click", closeFicha);
+      backdrop.addEventListener("click", closeFicha);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawer.classList.contains("open")) closeFicha();
+      });
+    })();
+  </script>
+</body>
+</html>

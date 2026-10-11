@@ -1,0 +1,6 @@
+﻿# temp extracts
+_docx_extract.txt
+_table_check.txt
+*.tmp
+.DS_Store
+Thumbs.db
