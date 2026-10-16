@@ -461,6 +461,26 @@
       opacity: 0.85;
     }
 
+    .portfolio-group {
+      margin: 1.35rem 0 0.55rem;
+      padding: 0.55rem 0 0.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .portfolio-group:first-child { margin-top: 0.25rem; }
+    .portfolio-group h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      letter-spacing: -0.01em;
+    }
+    .portfolio-group p {
+      margin: 0.2rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
     .btn-ficha {
       margin-top: 0.9rem;
       border: 1px solid var(--accent);
@@ -749,8 +769,8 @@
           <span>Coste licencia IA agéntica (Cursor) frente a semanas de consultoría</span>
         </div>
         <div class="kpi">
-          <strong>5 meses</strong>
-          <span>Proyectos de impacto con 11 años de conocimiento transversal Animum</span>
+          <strong>2025–27</strong>
+          <span>Portfolio de impacto en marcha · 11 años de conocimiento transversal Animum</span>
         </div>
       </div>
     </header>
@@ -817,6 +837,7 @@
         <p>
           En HubSpot vive la información de interesados, clientes y proveedores (p. ej. tutores) <strong>y</strong> una infraestructura completa de workflows, objetos (Contactos, Negocio, Lead, Negocio Tutor), formularios, secuencias y correos con contenido inteligente que automatizan captación, venta/matriculación, captación de tutores y la gestión de cada participación docente.
           De ahí la importancia de un perfil experto en HubSpot <strong>y</strong> capaz de auditar, corregir bugs y construir mejoras — dentro del propio HubSpot o con aplicaciones web ad hoc.
+          Gran parte de ese valor es <strong>software y diseño de procesos propios de Animum</strong> (no solo “activar pantallas” de un SaaS): el activo queda bajo control de la escuela.
         </p>
       </div>
 
@@ -849,7 +870,7 @@
         <div class="panel">
           <h3>Labor sobre HubSpot</h3>
           <p>
-            Expertise nativo (objetos, workflows, formularios, secuencias, correos inteligentes) + herramientas propias de gobierno: wiki-Hubspot, Hubspot-Auditor, Syncform, TW-Scheduler y rediseños de Lead / scoring.
+            Expertise nativo (objetos, workflows, formularios, secuencias, correos inteligentes) + herramientas propias de gobierno: wiki-Hubspot, Hubspot-Auditor, Syncform, TW-Scheduler, Negocio Tutor y rediseños de Lead / scoring.
           </p>
           <p style="margin-top:0.7rem">
             Resultado: más mejoras al año, menos roturas de captación y menos dependencia de consultoría externa.
@@ -897,7 +918,7 @@
         <div class="panel">
           <h3>Activo real</h3>
           <p>
-            El activo es la capacidad del técnico de Innovación y BI para detectar el cuello de botella, diseñar el proceso correcto e implantarlo, gracias a sus 11 años de conocimiento transversal de la escuela.
+            El activo no es la licencia de Cursor ni “pantallas” de un SaaS: es software y diseño de procesos propios de Animum, más la capacidad del técnico de Innovación y BI para detectar el cuello de botella, diseñar el proceso correcto e implantarlo —con 11 años de conocimiento transversal de la escuela.
           </p>
         </div>
       </div>
@@ -907,7 +928,7 @@
       <div class="sec-head">
         <div>
           <h2>Pruebas de impacto en negocio</h2>
-          <p>Proyectos de los últimos 5 meses. Expanda solo lo que le interese; lo esencial está en el título.</p>
+          <p>Cinco portfolios de capitalización + Oráculo como capa transversal. Expanda solo lo que le interese; lo esencial está en el título.</p>
         </div>
       </div>
 
@@ -917,6 +938,11 @@
       </div>
 
       <div id="accordionList">
+
+        <div class="portfolio-group">
+          <h3>Transversal · Oráculo</h3>
+          <p>Mapa vivo del datawarehouse — multiplica todo lo que se construye sobre datos y Lumen</p>
+        </div>
 
         <details class="acc" open>
           <summary>
@@ -930,13 +956,18 @@
           <div class="body">
             <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir una solución sin improvisar.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Reduce días/semanas de descubrimiento técnico a horas de consulta. Base de SentinEX y Comisiones en Lumen.</span></li>
+              <li><strong>Impacto</strong><span>Reduce días/semanas de descubrimiento técnico a horas de consulta. Base de SentinEX, Comisiones y Calendario lectivo en Lumen.</span></li>
               <li><strong>Seguro</strong><span>Menos riesgo de construir sobre datos malentendidos (métricas, comisiones, alertas).</span></li>
               <li><strong>Grupo</strong><span>Replicable como “wiki-DWH” por escuela o DWH central; Innovación/BI como consultor interno del grupo.</span></li>
             </ul>
             <button type="button" class="btn-ficha" data-ficha="oraculo">Ver ficha completa</button>
           </div>
         </details>
+
+        <div class="portfolio-group">
+          <h3>1 · Gobierno del CRM</h3>
+          <p>Wiki-CRM + auditoría forense — menos riesgo y más mejoras HubSpot al año</p>
+        </div>
 
         <details class="acc">
           <summary>
@@ -968,7 +999,7 @@
             <span class="badge badge-ok">En uso</span>
           </summary>
           <div class="body">
-            <p>Complementa a wiki-Hubspot: responde “quién cambió qué, cuándo, con qué workflow y qué se rompe si lo modifico”. Catálogo operativo: 4 objetos CRM, ~1.480 propiedades, 167 workflows (ampliable).</p>
+            <p>Complementa a wiki-Hubspot: responde “quién cambió qué, cuándo, con qué workflow y qué se rompe si lo modifico”. Catálogo operativo: 4 objetos CRM, ~1.480 propiedades, 167 workflows (ampliable). Go-live formal según ficha: agosto 2026.</p>
             <div class="before-after">
               <div class="ba before"><strong>Antes</strong>Análisis de impacto o bug forense: 1–3 días de ida y vuelta entre equipos.</div>
               <div class="ba after"><strong>Ahora</strong>Minutos/horas; diagnóstico con evidencia (~15–60 min en casos recurrentes).</div>
@@ -986,7 +1017,7 @@
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
               <b>Validación de teléfonos y WhatsApp</b>
-              <small>Multiplicación de la capacidad comercial</small>
+              <small>Multiplicación de la capacidad comercial — habilitado por wiki-Hubspot</small>
             </span>
             <span class="badge badge-ok">Finalizado</span>
           </summary>
@@ -1000,43 +1031,10 @@
           </div>
         </details>
 
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>TW-Scheduler</b>
-              <small>Aumento de la capacidad operativa y eliminación de errores</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <div class="before-after">
-              <div class="ba before"><strong>Antes</strong>15 min – 2 h de preparación cada 5–6 semanas (según bloques que arrancan).</div>
-              <div class="ba after"><strong>Ahora</strong>~5–10 minutos, una sola vez al año. Envíos automatizados desde el CRM.</div>
-            </div>
-            <p>Personaliza pautas docentes por bloque formativo, festivos y tipo de tutor. Elimina olvidos y desajustes de calendario.</p>
-            <button type="button" class="btn-ficha" data-ficha="tw">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>Syncform HubSpot</b>
-              <small>Automatización por cambios en catálogo formativo — Aumento de la capacidad operativa y eliminación de errores</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <p>Automatiza tareas internas de Marketing al añadir/modificar/eliminar disciplina o programa, y al gestionar bajas/vacaciones de asesores comerciales.</p>
-            <div class="before-after">
-              <div class="ba before"><strong>Antes</strong>~45 min + checklist Excel frágil por ejecución.</div>
-              <div class="ba after"><strong>Ahora</strong>~5 min, centralizado, con validación en tiempo real, log y posibilidad de deshacer.</div>
-            </div>
-            <button type="button" class="btn-ficha" data-ficha="syncform">Ver ficha completa</button>
-          </div>
-        </details>
+        <div class="portfolio-group">
+          <h3>2 · Control de negocio en Lumen</h3>
+          <p>Tres palancas: retención (SentinEX), comisiones/regularizaciones y calendario lectivo · go-live estimado ene. 2027</p>
+        </div>
 
         <details class="acc">
           <summary>
@@ -1048,7 +1046,7 @@
             <span class="badge badge-proc">En proceso</span>
           </summary>
           <div class="body">
-            <p>No es un bot de clasificación de tickets: es alerta temprana de bajas. Clasifica y prioriza con contexto 360º del alumno y valora riesgo de abandono; ejecución diaria automática.</p>
+            <p>No es un bot de clasificación de tickets: es alerta temprana de bajas. Clasifica y prioriza con contexto 360º del alumno y valora riesgo de abandono; ejecución diaria automática. Migrado a Lumen / dbt.</p>
             <ul class="impact-list">
               <li><strong>Impacto</strong><span>CX interviene antes de la anulación. Protege ingresos y reputación; reduce triaje manual.</span></li>
               <li><strong>Capacidad</strong><span>Control de negocio que antes no existía de forma sistemática.</span></li>
@@ -1079,13 +1077,98 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
+              <b>Calendario lectivo en Lumen</b>
+              <small>Gestión auditable de convocatorias y lecciones — sustituye Sheets + ERP dispersos</small>
+            </span>
+            <span class="badge badge-proc">En proceso</span>
+          </summary>
+          <div class="body">
+            <p>Sustituye el mantenimiento manual y fragmentado del calendario lectivo (Google Sheets y vERP) por visualización y gestión en Lumen: pistas híbridas, drag-and-drop de fechas de inicio, regeneración de lecciones respetando descansos, edición de años y convocatorias.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Menos errores de calendario y menos dependencia de procesos opacos; un único sitio auditable con roles.</span></li>
+              <li><strong>Palanca</strong><span>Tercera pata del bloque Lumen 26–27 junto a SentinEX y comisiones.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="calendario">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <div class="portfolio-group">
+          <h3>3 · Procesos CX</h3>
+          <p>Comunicación docente y medición del pulso alumno · en uso desde mayo 2026</p>
+        </div>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>TW-Scheduler</b>
+              <small>Aumento de la capacidad operativa y eliminación de errores</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>15 min – 2 h de preparación cada 5–6 semanas (~20–22 bloques en paralelo).</div>
+              <div class="ba after"><strong>Ahora</strong>~5–10 minutos, una sola vez al año. Envíos automatizados desde el CRM.</div>
+            </div>
+            <p>Define el calendario anual de Tips &amp; Warnings (lecciones 1–10 + encuesta) por convocatoria; ajusta por festivos y tipo de tutor (directo vs. corrección).</p>
+            <button type="button" class="btn-ficha" data-ficha="tw">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Encuestas semanales</b>
+              <small>Configuración y seguimiento del feedback alumno ligado al ritmo lectivo</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Complementa TW-Scheduler: configura el Google Form de encuesta a alumnos de forma sencilla, consulta historial y estadísticas, y exporta resultados en CSV. Cierra el ciclo comunicación docente → medición del pulso.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Menos dependencia de procesos fragmentados; instrumento de encuesta gobernado y reutilizable.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="encuestas">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <div class="portfolio-group">
+          <h3>4 · Procesos de venta</h3>
+          <p>Lead, scoring y automatización Marketing — escala comercial sin más masa salarial</p>
+        </div>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Syncform HubSpot</b>
+              <small>Automatización por cambios en catálogo formativo — Aumento de la capacidad operativa y eliminación de errores</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Automatiza tareas internas de Marketing al añadir/modificar/eliminar disciplina o programa, y al gestionar bajas/vacaciones de asesores comerciales.</p>
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>~45 min + checklist Excel frágil por ejecución.</div>
+              <div class="ba after"><strong>Ahora</strong>~5 min, centralizado, con validación en tiempo real, log y posibilidad de deshacer.</div>
+            </div>
+            <button type="button" class="btn-ficha" data-ficha="syncform">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
               <b>Migración al objeto Lead</b>
               <small>Precisión del funnel · 1 lead = 1 interés formativo</small>
             </span>
             <span class="badge badge-standby">Pendiente go-live</span>
           </summary>
           <div class="body">
-            <p>Infraestructura y procesos ya diseñados e implantados en HubSpot para migrar el engranaje comercial del Contacto al Lead. Pendiente de validación de Dirección de Marketing para “encender” el nuevo modelo.</p>
+            <p>Infraestructura y procesos ya diseñados e implantados en HubSpot para migrar el engranaje comercial del Contacto al Lead. Pendiente de validación de Dirección de Marketing para “encender” el nuevo modelo (go-live portfolio venta: sep. 2026).</p>
             <ul class="impact-list">
               <li><strong>Impacto</strong><span>Datos accionables por interés real; base correcta para scoring, asignación y conversión por producto/disciplina.</span></li>
             </ul>
@@ -1100,14 +1183,38 @@
               <b>Cualificación y Lead Scoring</b>
               <small>Optimización del esfuerzo comercial hacia leads de mayor valor</small>
             </span>
-            <span class="badge badge-standby">Pendiente validación</span>
+            <span class="badge badge-proc">En desarrollo</span>
           </summary>
           <div class="body">
-            <p>Score dinámico en tiempo real desde la primera solicitud; segmenta propensión a matriculación. Implementado; pendiente de valoración de Marketing antes de activación plena.</p>
+            <p>Arquitectura de puntuación y segmentación automatizada (workflows, campos calculados, formularios). Score dinámico desde la primera solicitud; segmenta propensión a matriculación. En desarrollo según ficha de capitalización; activación plena tras validación de Marketing.</p>
             <ul class="impact-list">
               <li><strong>Impacto</strong><span>Menos tiempo en leads fríos; mejor alineación Marketing–Ventas; más eficiencia sin incrementar masa salarial.</span></li>
             </ul>
             <button type="button" class="btn-ficha" data-ficha="scoring">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <div class="portfolio-group">
+          <h3>5 · Procesos tutores</h3>
+          <p>Gobierno del claustro en HubSpot + proyección de demanda docente</p>
+        </div>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>Negocio Tutor y objetivos de reclutamiento</b>
+              <small>Ciclo de vida docente + anticipación de cupo frente a matrícula</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Pipeline Negocio Tutor en HubSpot (recruiting → colaboración → baja) con formularios y automatizaciones; cuadro de objetivos (Sheets + API CRM) que cruza matrícula con necesidad docente por bloque. Escala: ~4.600 negocios tutor, ~685 Acuerdos Marco, miles de propuestas/curso.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Más tutores y participaciones con menos operativa manual; anticipación de carencias ante picos de venta.</span></li>
+              <li><strong>Futuro</strong><span>Migración del cuadro de objetivos a Lumen.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="tutores">Ver ficha completa</button>
           </div>
         </details>
 
@@ -1168,12 +1275,16 @@
               <td>Acelerar BI y control de negocio sobre datos reales</td>
             </tr>
             <tr>
-              <td>Automatización de comunicaciones y calendarios académicos</td>
+              <td>Automatización de comunicaciones y calendarios académicos (TW + encuestas)</td>
               <td>Menos carga administrativa con muchos docentes/bloques</td>
             </tr>
             <tr>
-              <td>Triaje / riesgo de abandono (SentinEX)</td>
-              <td>Protección de ingresos en CX con volumen de incidencias</td>
+              <td>Negocio Tutor + proyección de reclutamiento</td>
+              <td>Gobierno del claustro y cupo docente ante picos de venta</td>
+            </tr>
+            <tr>
+              <td>Triaje / riesgo de abandono (SentinEX) + calendario lectivo</td>
+              <td>Protección de ingresos y torre de control académica/comercial</td>
             </tr>
             <tr>
               <td>Desarrollo con IA agéntica</td>
@@ -1307,7 +1418,7 @@
             <h4>Qué es</h4>
             <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir una solución sin improvisar. Se usa como base de consulta y diseño; el beneficio llega a Ventas, Marketing, CX, Académico y Tutores, porque acelera paneles y aplicaciones internas basadas en datos reales de la escuela.</p>
             <h4>Casos reales</h4>
-            <p>Ha sido base de consulta y diseño para proyectos de impacto directo como SentinEX (protección de ingresos por abandono) y Comisiones en Lumen (transparencia y liquidación). Sin Oráculo, cada iniciativa habría exigido una investigación y auditoría del datawarehouse mucho más larga, cara en tiempo y dependiente de “quien se acuerda de cómo está montado”.</p>
+            <p>Ha sido base de consulta y diseño para proyectos de impacto directo como SentinEX (protección de ingresos por abandono), Comisiones en Lumen y Calendario lectivo. Sin Oráculo, cada iniciativa habría exigido una investigación y auditoría del datawarehouse mucho más larga, cara en tiempo y dependiente de “quien se acuerda de cómo está montado”.</p>
             <h4>Impacto económico (ahorro de costes + capacidad)</h4>
             <ul>
               <li>Reduce días/semanas de descubrimiento técnico por cada proyecto a horas de consulta sobre un mapa ya curado → más soluciones DWH/Lumen al año con el mismo equipo de Innovación/BI.</li>
@@ -1391,12 +1502,58 @@
         },
         tw: {
           title: "TW-Scheduler",
-          sub: "En uso · Aumento de la capacidad operativa y eliminación de errores",
+          sub: "En uso · Procesos CX · Aumento de la capacidad operativa y eliminación de errores",
           html: `
             <h4>Qué es</h4>
-            <p>Automatización de la programación y envío de correos de Tips &amp; Warnings semanales a los tutores participantes, personalizando las pautas docentes (criterios de corrección, errores habituales y contenidos de la semana) según el bloque formativo en curso.</p>
+            <p>Aplicación web que define y guarda el calendario de envíos Tips &amp; Warnings a tutores (lecciones 1–10 + encuesta final) por cada convocatoria anual, respetando festivos y el tipo de participación del tutor (directo vs. corrección). Persiste fechas en BigQuery y las propaga al CRM; los envíos se ejecutan automatizados desde HubSpot.</p>
             <h4>Impacto</h4>
-            <p>Ahorro drástico de tiempo y eliminación del riesgo de error. Transforma un proceso manual recurrente (de 15 minutos a 2 horas cada 5–6 semanas) en una gestión automatizada de apenas ~5 minutos una sola vez al año. La automatización elimina riesgos de errores en la configuración del envío.</p>`
+            <p>Ahorro drástico de tiempo y eliminación del riesgo de error. Transforma un proceso manual recurrente (de 15 minutos a 2 horas cada 5–6 semanas, con ~20–22 bloques en paralelo) en una gestión de ~5–10 minutos una sola vez al año.</p>
+            <h4>Estado</h4>
+            <p>En uso desde ~mayo 2026; consolidación v2.0 julio 2026 (bloque Procesos CX junto a Encuestas semanales).</p>`
+        },
+        encuestas: {
+          title: "Encuestas semanales",
+          sub: "En uso · Procesos CX · Configuración y seguimiento del feedback alumno",
+          html: `
+            <h4>Qué es</h4>
+            <p>Aplicación web que cierra el ciclo con TW-Scheduler: configura el Google Form de encuesta a alumnos (metadatos académicos, fechas de lección), consulta historial y estadísticas de respuestas y exporta resultados en CSV.</p>
+            <h4>Impacto</h4>
+            <p>Centraliza la configuración del instrumento y el seguimiento de respuestas, reduciendo dependencia de procesos manuales fragmentados y facilitando estadísticas y exportación reutilizables.</p>
+            <h4>Estado</h4>
+            <p>En uso (bloque Procesos CX 1.0 / 1.1); servicio en Cloud Run bajo dominio corporativo.</p>
+            <h4>Extrapolación al grupo</h4>
+            <p>Patrón “calendario académico → comunicaciones automáticas → medición”, aplicable a cualquier escuela con bloques y docentes.</p>`
+        },
+        calendario: {
+          title: "Calendario lectivo en Lumen",
+          sub: "En proceso · Control de negocio Lumen 26–27 · Tercera palanca del bloque",
+          html: `
+            <h4>Qué es</h4>
+            <p>Sustituye el mantenimiento manual y fragmentado del calendario lectivo (Google Sheets y vERP) por una herramienta de visualización y gestión en Lumen: pistas híbridas, drag-and-drop de fechas de inicio, regeneración de lecciones respetando descansos, edición de años, convocatorias y fechas.</p>
+            <h4>Contexto del bloque Lumen</h4>
+            <p>Forma parte de las tres palancas de control de negocio en Lumen junto a SentinEX (retención) y comisiones/regularizaciones. Go-live estimado del bloque: ~7 enero 2027.</p>
+            <h4>Impacto</h4>
+            <p>Menos errores de calendario, menos dependencia operativa de procesos dispersos, y un único sitio auditable con roles (consulta vs. gestión).</p>
+            <h4>Extrapolación al grupo</h4>
+            <p>Pieza de una “torre de control” académica/comercial replicable: retención + incentivos comerciales + calendario operativo.</p>`
+        },
+        tutores: {
+          title: "Negocio Tutor y objetivos de reclutamiento",
+          sub: "En uso · Procesos tutores · Gobierno del claustro y proyección de demanda",
+          html: `
+            <h4>Qué es</h4>
+            <p>Dos entregables complementarios: (1) pipeline de recruiting y participación sobre el objeto personalizado Negocio Tutor en HubSpot —captación, Acuerdo Marco, propuesta, formalización, seguimiento y baja— con propiedades, pipelines, formularios y workflows; (2) cuadro de Objetivos de reclutamiento en Google Sheets (fórmulas + Apps Script + API CRM) que cruza matrícula con requisitos académicos por módulo/bloque.</p>
+            <h4>Escala actual</h4>
+            <ul>
+              <li>~4.600 Negocios Tutor; ~685 Acuerdos Marco; ~1.940 contactos de posibles tutores.</li>
+              <li>Propuestas: 1.260 en 24–25; 1.094 en 25–26 (hasta la fecha). Media ~300 tutores consultados por inicio de bloque/convocatoria.</li>
+            </ul>
+            <h4>Impacto</h4>
+            <p>Sustituye Sheets rudimentarios y correos manuales por un sistema que absorbe volumen elevado de claustro sin incrementar masa salarial administrativa en la misma proporción. El cuadro anticipa carencias docentes frente a picos de venta y coordina con Ventas.</p>
+            <h4>Futuro</h4>
+            <p>Migración del cuadro de Objetivos a Lumen.</p>
+            <h4>Extrapolación al grupo</h4>
+            <p>Playbook de gobierno docente / colaboradores externos transferible a escuelas del grupo con CRM.</p>`
         },
         syncform: {
           title: "Syncform HubSpot",
@@ -1413,11 +1570,11 @@
         },
         sentinex: {
           title: "SentinEX",
-          sub: "En proceso · Protección de ingresos — Detección temprana de riesgo de abandono",
+          sub: "En proceso · Control de negocio Lumen · Protección de ingresos — riesgo de abandono",
           html: `
             <h4>Qué es</h4>
             <p>No es un bot de clasificación de tickets. Es un sistema de alerta temprana de bajas de alumnos. Al detectar el grado de enfado y el riesgo de abandono en tiempo real, permite a CX intervenir antes de que el alumno anule su matrícula y abandone.</p>
-            <p>Clasifica y prioriza tickets con contexto 360º del alumno y valora riesgo de baja. Ejecución diaria automática.</p>
+            <p>Clasifica y prioriza tickets con contexto 360º del alumno y valora riesgo de baja. Ejecución diaria automática. Migrado a Lumen / dbt como una de las tres palancas del bloque Lumen 26–27.</p>
             <h4>Impacto</h4>
             <p>Prevención y reducción de bajas/abandonos de alumnos, así como de quejas y malas experiencias que reviertan en mala imagen y comentarios negativos sobre la escuela.</p>
             <h4>Capacidad nueva</h4>
@@ -1425,10 +1582,10 @@
         },
         comisiones: {
           title: "Comisiones en Lumen",
-          sub: "En proceso · Transparencia y eficiencia operativa",
+          sub: "En proceso · Control de negocio Lumen · Transparencia y eficiencia operativa",
           html: `
             <h4>Qué es</h4>
-            <p>Automatización del cálculo de las comisiones y regularizaciones + visualización de la evolución de las comisiones en tiempo real, eliminando la opacidad y las horas de revisión manual en Excels.</p>
+            <p>Automatización del cálculo de las comisiones y regularizaciones + visualización de la evolución de las comisiones en tiempo real, eliminando la opacidad y las horas de revisión manual en Excels. Segunda palanca del bloque Lumen 26–27.</p>
             <h4>Impacto</h4>
             <ul>
               <li>Reducción de tiempos de gestión y cero errores de cálculo.</li>
@@ -1447,7 +1604,7 @@
             <h4>Labor ya realizada</h4>
             <p>Diseño e implantación en HubSpot de la infraestructura y los procesos necesarios para migrar del modelo basado en Contactos al modelo basado en Leads, manteniendo la trazabilidad contacto–interés.</p>
             <h4>Estado</h4>
-            <p>Desarrollado y en stand-by, a la espera de que Dirección de Marketing pueda validar y dar el ok para la última fase (“encender” el nuevo sistema basado en Lead y “apagar” el actual sistema basado en Contactos).</p>
+            <p>Desarrollado y en stand-by, a la espera de que Dirección de Marketing pueda validar y dar el ok para la última fase (“encender” el nuevo sistema basado en Lead y “apagar” el actual sistema basado en Contactos). Go-live del portfolio venta previsto: 1 sep. 2026.</p>
             <h4>Impacto de negocio</h4>
             <p>Datos comerciales más limpios y accionables; reporting y priorización por interés real (no por “contacto genérico”); menos fricción y errores al mezclar estados de distintas intenciones de compra; base correcta para scoring, asignación y medición de conversión por producto/disciplina.</p>
             <h4>Capacidad nueva</h4>
@@ -1455,13 +1612,13 @@
         },
         scoring: {
           title: "Cualificación y Lead Scoring",
-          sub: "Desarrollado; pendiente de validación · Optimización del esfuerzo comercial hacia leads de mayor valor",
+          sub: "En desarrollo · Optimización del esfuerzo comercial hacia leads de mayor valor",
           html: `
             <h4>Qué es</h4>
             <p>Diseño e implementación de una arquitectura de puntuación y segmentación automatizada basada en workflows, campos calculados y formularios integrados.</p>
             <p>El modelo calcula en tiempo real un score dinámico desde la primera solicitud de información, evaluando variables operativas e interacciones del prospecto para categorizar su propensión a matriculación y activar segmentaciones precisas que optimicen el impacto comercial y de marketing (quién merece atención inmediata vs. nurturing).</p>
             <h4>Estado</h4>
-            <p>Implementado y en espera de que Dirección de Marketing valore y valide el scoring propuesto antes de su activación plena en la operativa.</p>
+            <p>En desarrollo según ficha de capitalización de Procesos de venta. La activación plena en operativa queda sujeta a validación de Dirección de Marketing.</p>
             <h4>Impacto de negocio</h4>
             <p>Menos tiempo comercial en leads fríos; más foco en perfiles con mayor cercanía a compra; mejor alineación Marketing–Ventas sobre “qué es un lead cualificado”; mayor eficiencia del mismo equipo comercial sin incrementar masa salarial.</p>
             <h4>Capacidad nueva</h4>
