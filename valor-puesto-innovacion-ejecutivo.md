@@ -56,10 +56,10 @@ En **5 días**, >**140.000** contactos / >**40** países; fiabilidad estimada **
 
 Score dinámico para concentrar esfuerzo en leads de mayor valor. **Signal Prospector** ya está **conectado a HubSpot** con pruebas OK; falta **calibrar** los criterios de valoración/puntuación de cada contacto. Señales de intención, ranking y borrador de primer contacto; **nunca envía sin OK humano**.
 
-### 4.4. Funnel — objeto Lead (pendiente go-live) + CDM-Manager (en desarrollo)
+### 4.4. Funnel — objeto Lead (pendiente go-live) + CDM-Manager (en uso)
 
 - **Lead:** 1 lead = 1 interés formativo; infraestructura lista; falta validación Marketing para cutover.  
-- **CDM-Manager:** rotación del cupo de Contactos de Marketing (~20.000 / techo ~21.000): alcance de nurturing **y** control de coste SaaS.
+- **CDM-Manager:** **finalizado y en uso** — rotación mensual del cupo de Contactos de Marketing (~20.000 / techo ~21.000) con salvoconductos (venta, nurturing, tutores, alumnos…) + relleno por score; propose → dry-run → confirm; sin mutar propiedades de contacto. Alcance de nurturing **y** control de coste SaaS.
 
 ### 4.5. Insight y higiene (activado / sandbox)
 

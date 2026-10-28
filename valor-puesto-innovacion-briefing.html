@@ -1040,15 +1040,16 @@
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
               <b>6 · CDM-Manager</b>
-              <small>Cupo de Contactos de Marketing — alcance de nurturing + control de coste SaaS</small>
+              <small>Rotación mensual del cupo de Contactos de Marketing — objetivo ~20.000 / techo ~21.000</small>
             </span>
-            <span class="badge badge-proc">En desarrollo</span>
+            <span class="badge badge-ok">En uso</span>
           </summary>
           <div class="body">
-            <p>App propia (FastAPI + React) para la rotación mensual de Contactos de Marketing en HubSpot bajo cupo objetivo (~20.000) y techo duro (~21.000). Propone altas/bajas, dry-run y confirmación; protege segmentos de alto valor (venta, nurturing, alumnos, tutores) sin mutar propiedades de contacto.</p>
+            <p>App propia (FastAPI + React) <strong>finalizada y en uso</strong> para la rotación mensual de Contactos de Marketing en HubSpot. Ciclo governado propose → dry-run → confirm: decide quién entra/sale del cupo, protege “salvoconductos” (secuencia de venta, nurturing/fidelización, tutores activos, alumnos con matrícula, etc.) y completa plazas por score CDM. Altas/bajas vía listas ops/historial y workflows — <strong>sin mutar propiedades de contacto</strong>.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Más capacidad de captación/nurturing dentro del cupo contratado; evita sobrecoste y pérdida de cobertura por rotación desgobernada.</span></li>
+              <li><strong>Impacto</strong><span>Alcance de nurturing/captación dentro del cupo contratado; evita sobrecoste al superar el techo y pérdida de cobertura por rotación desgobernada.</span></li>
               <li><strong>Crisis</strong><span>Cada asiento de marketing contact cuenta: prioriza a quién mantener en el embudo activo.</span></li>
+              <li><strong>Seguro</strong><span>Hard stop si el semáforo es bloqueo o se supera el techo; apply de producción con confirmación explícita.</span></li>
             </ul>
             <button type="button" class="btn-ficha" data-ficha="cdm">Ver ficha completa</button>
           </div>
@@ -1678,20 +1679,27 @@
         },
         cdm: {
           title: "CDM-Manager",
-          sub: "En desarrollo · Cupo de Contactos de Marketing HubSpot (~20.000 / techo ~21.000)",
+          sub: "En uso · Finalizado · Rotación mensual Contactos de Marketing (~20.000 / techo ~21.000)",
           html: `
-            <h4>Qué es</h4>
-            <p>Aplicación propia (FastAPI + React) para la rotación mensual de Contactos de Marketing (CDM) en HubSpot. Propone quién entra/sale del cupo, permite dry-run y confirmación controlada, y aplica altas/bajas vía listas operativas e historial y workflows — <strong>sin mutar propiedades de contacto</strong>.</p>
+            <h4>Estado</h4>
+            <p><strong>Finalizado y en uso.</strong> App híbrida propia (Python/FastAPI + React/Vite) para operar el cupo de Contactos de Marketing de HubSpot mes a mes.</p>
             <h4>Problema de negocio</h4>
-            <p>El cupo de marketing contacts es coste y capacidad a la vez: superar el techo es sobrecoste; rotar mal es perder cobertura de nurturing y captación sobre contactos de valor.</p>
+            <p>El cupo de marketing contacts es <strong>coste SaaS y capacidad de nurturing/captación</strong> a la vez: superar el techo (~21.000) es sobrecoste; rotar mal es sacar del embudo activo a contactos de valor (venta, nurturing, alumnos, tutores).</p>
+            <h4>Cómo funciona</h4>
+            <ul>
+              <li><strong>Ciclo governado:</strong> propose → dry-run → confirm (en producción, confirmación explícita adicional).</li>
+              <li><strong>Salvoconductos (entran sí o sí al cupo, por prioridad):</strong> secuencia de venta; nurturing/fidelización e inbound; tutores con participación activa; alumnos con matrícula activa; ventana de los primeros 31 días; exclusiones manuales; se excluyen segmentos sin negocio / baja de suscripciones / tutores no activos.</li>
+              <li><strong>Relleno del objetivo (~20.000):</strong> plazas restantes con candidatos por puntuación CDM (mejores scores).</li>
+              <li><strong>Aplicación segura:</strong> altas/bajas solo vía listas operativas e historial (<code>CDM_OPS_*</code> / <code>CDM_HIST_*</code>) + enrollment a workflows ALTA/BAJA. <strong>No muta propiedades de contacto</strong> ni edita triggers de workflows. Hard stop si semáforo de bloqueo o se supera el techo.</li>
+            </ul>
             <h4>Impacto</h4>
             <ul>
-              <li>Control de coste SaaS bajo techo duro.</li>
-              <li>Prioriza segmentos “salvoconducto” (venta, nurturing, alumnos, tutores, etc.) + pool por score.</li>
-              <li>En crisis: cada asiento del embudo activo cuenta para Marketing y Ventas.</li>
+              <li>Control de coste bajo techo duro y cobertura de captación/nurturing dentro del cupo contratado.</li>
+              <li>Priorización explícita de quién merece quedarse en el embudo activo.</li>
+              <li>En crisis: cada asiento de marketing contact cuenta para Marketing y Ventas.</li>
             </ul>
-            <h4>Estado</h4>
-            <p>En desarrollo (ciclo propose → dry-run → confirm; sandbox antes de producción).</p>`
+            <h4>Activo propio</h4>
+            <p>Software y reglas de negocio de Animum (no “activar pantallas” de un SaaS genérico): el ranking, el cupo y el flujo de apply quedan bajo control interno.</p>`
         },
         dealLoss: {
           title: "Deal Loss Agent",

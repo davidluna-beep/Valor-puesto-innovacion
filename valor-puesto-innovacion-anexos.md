@@ -153,7 +153,7 @@ Gobierno del claustro / docentes asociados y planificación de capacidad ante ve
 | 3 | Lead Scoring | Priorización Ventas | En desarrollo; foco en leads de mayor valor |
 | 4 | Signal Prospector | Capacidad captación | Conectado HubSpot; pruebas OK; **pendiente calibrar criterios** de valoración/puntuación; sin envío sin OK |
 | 5 | Objeto Lead | Precisión del funnel | Desarrollado; pendiente go-live Marketing |
-| 6 | CDM-Manager | Capacidad + coste SaaS | En desarrollo; cupo ~20k / techo ~21k Contactos de Marketing |
+| 6 | CDM-Manager | Capacidad + coste SaaS | **En uso** (finalizado); cupo ~20k / techo ~21k; salvoconductos + score; propose→dry-run→confirm |
 | 7 | Deal Loss Agent | Insight pérdidas | **Activado** en HubSpot; prueba OK; **pendiente entrenar** con operativa/productos/pipeline Animum |
 | 8 | wiki-Hubspot + Auditor | Seguro CRM captación | En uso; impacto días→minutos |
 | 9 | Oráculo | Multiplicador DWH/Lumen | En uso |
@@ -170,16 +170,20 @@ Gobierno del claustro / docentes asociados y planificación de capacidad ante ve
 ## A9. CDM-Manager (cupo Contactos de Marketing)
 
 **Área:** Innovación y BI · HubSpot / Marketing  
-**Estado:** en desarrollo  
+**Estado:** **finalizado y en uso**  
 
 ### Problema
-El cupo de Contactos de Marketing es a la vez **coste SaaS** y **capacidad de nurturing/captación**. Superar el techo encarece; rotar mal pierde cobertura sobre contactos de valor.
+El cupo de Contactos de Marketing es a la vez **coste SaaS** y **capacidad de nurturing/captación**. Superar el techo (~21.000) encarece; rotar mal pierde cobertura sobre contactos de valor.
 
 ### Qué hace
-App propia (FastAPI + React): ciclo propose → dry-run → confirm de altas/bajas bajo objetivo ~20.000 / techo ~21.000; prioriza segmentos de alto valor; escribe solo vía listas ops/historial y workflows (sin mutar propiedades de contacto).
+App propia (FastAPI + React), ciclo mensual **propose → dry-run → confirm** (objetivo ~20.000 / techo duro ~21.000):
+
+- **Salvoconductos** (prioridad): secuencia de venta; nurturing/fidelización e inbound; tutores con participación activa; alumnos con matrícula activa; primeros 31 días; exclusiones manuales. Excluye sin-negocio / baja de suscripciones / tutores no activos.
+- **Relleno** del cupo con candidatos por puntuación CDM.
+- **Apply seguro:** solo listas `CDM_OPS_*` / `CDM_HIST_*` + workflows ALTA/BAJA; **sin mutar propiedades** de contacto; hard stop si bloqueo o > techo.
 
 ### Valor en crisis
-Cada asiento del embudo activo cuenta: más alcance de Marketing/Ventas dentro del cupo contratado.
+Cada asiento del embudo activo cuenta: más alcance de Marketing/Ventas dentro del cupo contratado, con control de coste.
 
 ---
 
