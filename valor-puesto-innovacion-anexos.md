@@ -151,13 +151,13 @@ Gobierno del claustro / docentes asociados y planificación de capacidad ante ve
 | 1 | SentinEX | Protección de ingresos | Riesgo de baja; ejecución diaria |
 | 2 | Teléfonos / WhatsApp | Capacidad comercial | 140k+ contactos, 5 días; >95 % fiabilidad; +20 % contacto útil est. |
 | 3 | Lead Scoring | Priorización Ventas | En desarrollo; foco en leads de mayor valor |
-| 4 | Signal Prospector (y sim.) | Roadmap captación | **En investigación · no implantado**; señales + borrador; sin envío sin OK |
+| 4 | Signal Prospector | Capacidad captación | Conectado HubSpot; pruebas OK; **pendiente calibrar criterios** de valoración/puntuación; sin envío sin OK |
 | 5 | Objeto Lead | Precisión del funnel | Desarrollado; pendiente go-live Marketing |
 | 6 | CDM-Manager | Capacidad + coste SaaS | En desarrollo; cupo ~20k / techo ~21k Contactos de Marketing |
-| 7 | Deal Loss Agent (y sim.) | Insight pérdidas | **En investigación · no implantado**; patrones closed-lost |
+| 7 | Deal Loss Agent | Insight pérdidas | **Activado** en HubSpot; prueba OK; **pendiente entrenar** con operativa/productos/pipeline Animum |
 | 8 | wiki-Hubspot + Auditor | Seguro CRM captación | En uso; impacto días→minutos |
 | 9 | Oráculo | Multiplicador DWH/Lumen | En uso |
-| 10 | Koalify (y sim.) | Higiene embudo captación | **En investigación · no implantado**; menos duplicados / leads fantasma |
+| 10 | Koalify | Higiene embudo captación | Probado en **sandbox**; prod = licencia (~75 €/mes 150k · ~100 €/mes 200k anual) + reglas de merge |
 | 11 | Negocio Tutor / objetivos | Escala entrega docente | En uso; ~4,6k negocios tutor |
 | 12 | Comisiones Lumen | Motivación + control | En proceso; bruto/regularizado/neto |
 | 13 | Syncform | Velocidad oferta Mk | En uso; ~45 min → ~5 min |
@@ -183,27 +183,27 @@ Cada asiento del embudo activo cuenta: más alcance de Marketing/Ventas dentro d
 
 ---
 
-## A10. Signal Prospector y agentes de intención (investigación)
+## A10. Signal Prospector (calibración)
 
-**Estado:** **en investigación · no implantado**  
+**Estado:** conectado a HubSpot · pruebas OK · **pendiente calibración**  
 
-Evaluación de agentes (p. ej. Signal Prospector) que rankean señales de intención y preparan borradores de primer contacto. **Nunca envían sin OK humano.** Relacionado con Lead Scoring: refuerzo futuro de capacidad comercial sin más plantilla.
-
----
-
-## A11. Deal Loss Agent (investigación)
-
-**Estado:** **en investigación · no implantado**  
-
-Evaluación del agente HubSpot Deal Loss (y equivalentes) para patrones de deals closed-lost. Es **insight** para mejorar captación/cierre, no ejecución automática. En el relato directivo va **después de CDM**: primero capacidad operativa, luego aprendizaje de pérdidas.
+Rankea señales de intención y prepara borradores de primer contacto. **Nunca envía sin OK humano.** Siguiente paso: definir/entrenar los criterios de valoración y puntuación de cada contacto. Relacionado con Lead Scoring.
 
 ---
 
-## A12. Koalify y deduplicación (investigación)
+## A11. Deal Loss Agent (entrenamiento)
 
-**Estado:** **en investigación · no implantado**  
+**Estado:** activado y disponible en HubSpot · prueba OK · **pendiente entrenamiento**  
 
-Evaluación de deduplicación nativa HubSpot (p. ej. Koalify). Objetivo: **higiene del embudo de captación** — menos leads fantasma, menos reporting sucio, menos esfuerzo comercial perdido en duplicados. Complementa wiki-Auditor y la limpieza de teléfonos.
+Patrones de deals closed-lost → insight para mejorar captación/cierre (no ejecución automática). Siguiente paso: aportarle operativa interna, productos, metodología y pipeline de trabajo con interesados, para informes más precisos. En el relato directivo va **después de CDM**.
+
+---
+
+## A12. Koalify (sandbox → producción)
+
+**Estado:** conectado y probado en **sandbox** · **pendiente licencia + configuración en producción**  
+
+**Higiene del embudo de captación** (menos duplicados / leads fantasma). Para prod: licencia ~**75 €/mes** (hasta 150k contactos) o ~**100 €/mes** (hasta 200k) con contratación anual; luego configurar criterios de detección y fusión. Complementa wiki-Auditor y la limpieza de teléfonos.
 
 ---
 
@@ -222,7 +222,7 @@ Slides sugeridas (máx. 8–10):
 2. El problema: captar y retener sin crecer en plantilla al mismo ritmo  
 3. Mi rol (1 frase) + equipo de 3  
 4. Bloque comercial: SentinEX → teléfonos → scoring → Lead → CDM  
-5. Roadmap etiquetado: Signal / Deal Loss / Koalify (investigación, no implantado)  
+5. Signal / Deal Loss (calibración) + Koalify (sandbox → licencia)  
 6. Seguro CRM (wiki + Auditor) + Oráculo  
 7. Por qué no es prescindible (efecto palanca Ventas/Marketing)  
 8. Transferible a AD Education  

@@ -52,19 +52,19 @@ Cada ticket se clasifica y prioriza con contexto 360º del alumno y se valora **
 
 En **5 días**, >**140.000** contactos / >**40** países; fiabilidad estimada **>95 %**. Más contacto útil (est. **+20 %**) → más matrículas con el mismo equipo de Ventas (habilitado por wiki-Hubspot).
 
-### 4.3. Priorización — Lead Scoring (en desarrollo) + roadmap Signal (investigación)
+### 4.3. Priorización — Lead Scoring (en desarrollo) + Signal Prospector (calibración)
 
-Score dinámico para concentrar esfuerzo en leads de mayor valor. **En investigación (no implantado):** agentes tipo Signal Prospector — señales de intención, ranking y borrador de primer contacto; **nunca envían sin OK humano**.
+Score dinámico para concentrar esfuerzo en leads de mayor valor. **Signal Prospector** ya está **conectado a HubSpot** con pruebas OK; falta **calibrar** los criterios de valoración/puntuación de cada contacto. Señales de intención, ranking y borrador de primer contacto; **nunca envía sin OK humano**.
 
 ### 4.4. Funnel — objeto Lead (pendiente go-live) + CDM-Manager (en desarrollo)
 
 - **Lead:** 1 lead = 1 interés formativo; infraestructura lista; falta validación Marketing para cutover.  
 - **CDM-Manager:** rotación del cupo de Contactos de Marketing (~20.000 / techo ~21.000): alcance de nurturing **y** control de coste SaaS.
 
-### 4.5. Insight y higiene (investigación, no implantado)
+### 4.5. Insight y higiene (activado / sandbox)
 
-- **Deal Loss Agent** (y sim.): patrones de deals perdidos → mejoras futuras (después de CDM: primero capacidad, luego insight).  
-- **Koalify** (y sim.): **higiene del embudo de captación** (menos duplicados / leads fantasma).
+- **Deal Loss Agent:** **activado** en HubSpot; prueba OK. Falta **entrenarlo** con operativa, productos, metodología y pipeline de interesados para informes más precisos (después de CDM: primero capacidad, luego insight).  
+- **Koalify:** conectado y **probado en sandbox**. Para producción: licencia (~75 €/mes hasta 150k contactos · ~100 €/mes hasta 200k, anual) + configurar criterios de detección/fusión. **Higiene del embudo de captación.**
 
 ### 4.6. Seguro CRM y multiplicador de datos (en uso)
 
@@ -125,7 +125,7 @@ Animum, por su modelo online y su madurez digital operativa, puede actuar como *
 
 ### ¿Qué valor diferencial aporto hoy a Animum?
 
-En crisis comercial: protejo ingresos (SentinEX), multiplico capacidad de Ventas/Marketing (teléfonos, scoring, Lead, CDM) y dejo roadmap etiquetado de agentes e higiene de embudo — sistemas estables, no experimentos opacos.
+En crisis comercial: protejo ingresos (SentinEX), multiplico capacidad de Ventas/Marketing (teléfonos, scoring, Lead, CDM) y avanzo agentes ya conectados (Signal, Deal Loss) más higiene de embudo (Koalify en sandbox) — inversión en captación, no gasto opaco.
 
 ### ¿Qué valor podría aportar en el futuro próximo al grupo?
 
