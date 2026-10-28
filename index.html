@@ -27,6 +27,8 @@
       --proc-soft: #dce8f5;
       --standby: #6b4f1d;
       --standby-soft: #f3ebd4;
+      --research: #5b3d7a;
+      --research-soft: #efe8f5;
       --shadow: 0 1px 0 rgba(15, 28, 36, 0.04);
       --radius: 10px;
       --nav-h: 56px;
@@ -434,6 +436,7 @@
     .badge-ok { background: var(--ok-soft); color: var(--ok); }
     .badge-proc { background: var(--proc-soft); color: var(--proc); }
     .badge-standby { background: var(--standby-soft); color: var(--standby); }
+    .badge-research { background: var(--research-soft); color: var(--research); }
 
     .acc-title { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
     .acc-title b { font-size: 0.98rem; }
@@ -870,7 +873,7 @@
         <div class="panel">
           <h3>Labor sobre HubSpot</h3>
           <p>
-            Expertise nativo (objetos, workflows, formularios, secuencias, correos inteligentes) + herramientas propias de gobierno: wiki-Hubspot, Hubspot-Auditor, Syncform, TW-Scheduler, Negocio Tutor y rediseños de Lead / scoring.
+            Expertise nativo (objetos, workflows, formularios, secuencias, correos inteligentes) + herramientas propias de gobierno: wiki-Hubspot, Hubspot-Auditor, Syncform, TW-Scheduler, Negocio Tutor, CDM-Manager (cupo Contactos de Marketing) y rediseños de Lead / scoring — más roadmap de agentes comerciales y higiene de embudo en investigación.
           </p>
           <p style="margin-top:0.7rem">
             Resultado: más mejoras al año, menos roturas de captación y menos dependencia de consultoría externa.
@@ -928,7 +931,7 @@
       <div class="sec-head">
         <div>
           <h2>Pruebas de impacto en negocio</h2>
-          <p>Cinco portfolios de capitalización + Oráculo como capa transversal. Expanda solo lo que le interese; lo esencial está en el título.</p>
+          <p>Ordenado por impacto en captación y actividad comercial en contexto de presión comercial (incluye roadmap etiquetado como investigación).</p>
         </div>
       </div>
 
@@ -939,108 +942,11 @@
 
       <div id="accordionList">
 
-        <div class="portfolio-group">
-          <h3>Transversal · Oráculo</h3>
-          <p>Mapa vivo del datawarehouse — multiplica todo lo que se construye sobre datos y Lumen</p>
-        </div>
-
         <details class="acc" open>
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Oráculo</b>
-              <small>Ahorro de costes y multiplicación de capacidad sobre Datawarehouse y Lumen</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir una solución sin improvisar.</p>
-            <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Reduce días/semanas de descubrimiento técnico a horas de consulta. Base de SentinEX, Comisiones y Calendario lectivo en Lumen.</span></li>
-              <li><strong>Seguro</strong><span>Menos riesgo de construir sobre datos malentendidos (métricas, comisiones, alertas).</span></li>
-              <li><strong>Grupo</strong><span>Replicable como “wiki-DWH” por escuela o DWH central; Innovación/BI como consultor interno del grupo.</span></li>
-            </ul>
-            <button type="button" class="btn-ficha" data-ficha="oraculo">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <div class="portfolio-group">
-          <h3>1 · Gobierno del CRM</h3>
-          <p>Wiki-CRM + auditoría forense — menos riesgo y más mejoras HubSpot al año</p>
-        </div>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>wiki-Hubspot</b>
-              <small>Mapa vivo del CRM — Ahorro de costes y multiplicación de la capacidad de mejora del CRM</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <p>Cartografía qué hay en HubSpot, cómo está conectado y qué se rompe si se toca. Caso real: normalizar &gt;140.000 teléfonos/WhatsApp en 5 días (&gt;95% fiabilidad estimada). Sin wiki, habría exigido semanas de trabajo full-time.</p>
-            <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Análisis de impacto de días/semanas → minutos/horas. Más mejoras CRM al año con el mismo equipo.</span></li>
-              <li><strong>Seguro</strong><span>Reduce riesgo de romper captación, envíos o reglas comerciales.</span></li>
-              <li><strong>Grupo</strong><span>Modelo “wiki-CRM” replicable en otras escuelas con HubSpot (o CRM conectable).</span></li>
-            </ul>
-            <button type="button" class="btn-ficha" data-ficha="wiki">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>Hubspot-Auditor</b>
-              <small>Auditoría forense — Ahorro de costes y reducción de riesgo operativo en automatismos del CRM</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <p>Complementa a wiki-Hubspot: responde “quién cambió qué, cuándo, con qué workflow y qué se rompe si lo modifico”. Catálogo operativo: 4 objetos CRM, ~1.480 propiedades, 167 workflows (ampliable). Go-live formal según ficha: agosto 2026.</p>
-            <div class="before-after">
-              <div class="ba before"><strong>Antes</strong>Análisis de impacto o bug forense: 1–3 días de ida y vuelta entre equipos.</div>
-              <div class="ba after"><strong>Ahora</strong>Minutos/horas; diagnóstico con evidencia (~15–60 min en casos recurrentes).</div>
-            </div>
-            <ul class="impact-list">
-              <li><strong>Fiabilidad</strong><span>&gt;90% en atribución de cambios (catálogo alineado); ~85–95% cobertura útil en impacto vs. auditoría manual incompleta.</span></li>
-              <li><strong>Grupo</strong><span>Capa de “auditoría CRM” compartida frente a consultorías externas por bug o cambio sensible.</span></li>
-            </ul>
-            <button type="button" class="btn-ficha" data-ficha="auditor">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>Validación de teléfonos y WhatsApp</b>
-              <small>Multiplicación de la capacidad comercial — habilitado por wiki-Hubspot</small>
-            </span>
-            <span class="badge badge-ok">Finalizado</span>
-          </summary>
-          <div class="body">
-            <p>Limpieza y normalización de más de 140.000 contactos de 40 países en 5 días, con &gt;95% de fiabilidad estimada para Ventas. Posible gracias al mapa de impacto de wiki-Hubspot.</p>
-            <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Si Ventas no pierde tiempo con números erróneos, la tasa de contacto útil sube más de un 20% → más matriculaciones con el mismo equipo.</span></li>
-              <li><strong>Próximo</strong><span>Sistema automático de prevención + revisión diaria de nuevos contactos y prefijos.</span></li>
-            </ul>
-            <button type="button" class="btn-ficha" data-ficha="telefonos">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <div class="portfolio-group">
-          <h3>2 · Control de negocio en Lumen</h3>
-          <p>Tres palancas: retención (SentinEX), comisiones/regularizaciones y calendario lectivo · go-live estimado ene. 2027</p>
-        </div>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>SentinEX</b>
+              <b>1 · SentinEX</b>
               <small>Protección de ingresos — Detección temprana de riesgo de abandono</small>
             </span>
             <span class="badge badge-proc">En proceso</span>
@@ -1059,17 +965,18 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Comisiones en Lumen</b>
-              <small>Transparencia, liquidación y regularizaciones automáticas</small>
+              <b>2 · Validación de teléfonos y WhatsApp</b>
+              <small>Multiplicación de la capacidad comercial — habilitado por wiki-Hubspot</small>
             </span>
-            <span class="badge badge-proc">En proceso</span>
+            <span class="badge badge-ok">Finalizado</span>
           </summary>
           <div class="body">
-            <p>Cálculo automático de comisiones y regularizaciones + evolución en tiempo real (bruto / regularizado / neto) para comerciales y managers, con trazabilidad.</p>
+            <p>Limpieza y normalización de más de 140.000 contactos de 40 países en 5 días, con &gt;95% de fiabilidad estimada para Ventas.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Menos horas en Excel, cero errores de cálculo, menos opacidad y conflictividad; mayor motivación comercial.</span></li>
+              <li><strong>Impacto</strong><span>Si Ventas no pierde tiempo con números erróneos, la tasa de contacto útil sube más de un 20% → más matriculaciones con el mismo equipo.</span></li>
+              <li><strong>Próximo</strong><span>Sistema automático de prevención + revisión diaria de nuevos contactos y prefijos.</span></li>
             </ul>
-            <button type="button" class="btn-ficha" data-ficha="comisiones">Ver ficha completa</button>
+            <button type="button" class="btn-ficha" data-ficha="telefonos">Ver ficha completa</button>
           </div>
         </details>
 
@@ -1077,42 +984,17 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Calendario lectivo en Lumen</b>
-              <small>Gestión auditable de convocatorias y lecciones — sustituye Sheets + ERP dispersos</small>
+              <b>3 · Cualificación y Lead Scoring</b>
+              <small>Optimización del esfuerzo comercial hacia leads de mayor valor</small>
             </span>
-            <span class="badge badge-proc">En proceso</span>
+            <span class="badge badge-proc">En desarrollo</span>
           </summary>
           <div class="body">
-            <p>Sustituye el mantenimiento manual y fragmentado del calendario lectivo (Google Sheets y vERP) por visualización y gestión en Lumen: pistas híbridas, drag-and-drop de fechas de inicio, regeneración de lecciones respetando descansos, edición de años y convocatorias.</p>
+            <p>Arquitectura de puntuación y segmentación automatizada (workflows, campos calculados, formularios). Score dinámico desde la primera solicitud; segmenta propensión a matriculación. Activación plena tras validación de Marketing.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Menos errores de calendario y menos dependencia de procesos opacos; un único sitio auditable con roles.</span></li>
-              <li><strong>Palanca</strong><span>Tercera pata del bloque Lumen 26–27 junto a SentinEX y comisiones.</span></li>
+              <li><strong>Impacto</strong><span>Menos tiempo en leads fríos; mejor alineación Marketing–Ventas; más eficiencia sin incrementar masa salarial.</span></li>
             </ul>
-            <button type="button" class="btn-ficha" data-ficha="calendario">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <div class="portfolio-group">
-          <h3>3 · Procesos CX</h3>
-          <p>Comunicación docente y medición del pulso alumno · en uso desde mayo 2026</p>
-        </div>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>TW-Scheduler</b>
-              <small>Aumento de la capacidad operativa y eliminación de errores</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <div class="before-after">
-              <div class="ba before"><strong>Antes</strong>15 min – 2 h de preparación cada 5–6 semanas (~20–22 bloques en paralelo).</div>
-              <div class="ba after"><strong>Ahora</strong>~5–10 minutos, una sola vez al año. Envíos automatizados desde el CRM.</div>
-            </div>
-            <p>Define el calendario anual de Tips &amp; Warnings (lecciones 1–10 + encuesta) por convocatoria; ajusta por festivos y tipo de tutor (directo vs. corrección).</p>
-            <button type="button" class="btn-ficha" data-ficha="tw">Ver ficha completa</button>
+            <button type="button" class="btn-ficha" data-ficha="scoring">Ver ficha completa</button>
           </div>
         </details>
 
@@ -1120,41 +1002,18 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Encuestas semanales</b>
-              <small>Configuración y seguimiento del feedback alumno ligado al ritmo lectivo</small>
+              <b>4 · Signal Prospector</b>
+              <small>Roadmap · Refuerzo de scoring con señales de intención y borradores de primer contacto</small>
             </span>
-            <span class="badge badge-ok">En uso</span>
+            <span class="badge badge-research">En investigación</span>
           </summary>
           <div class="body">
-            <p>Complementa TW-Scheduler: configura el Google Form de encuesta a alumnos de forma sencilla, consulta historial y estadísticas, y exporta resultados en CSV. Cierra el ciclo comunicación docente → medición del pulso.</p>
+            <p><strong>No implantado.</strong> Evaluación de un agente (tipo Signal Prospector y similares) que localiza cuentas/personas con intención reciente, las rankea y prepara borradores de primer contacto. <strong>Nunca envía ni enrola en secuencias sin OK humano.</strong></p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Menos dependencia de procesos fragmentados; instrumento de encuesta gobernado y reutilizable.</span></li>
+              <li><strong>Relación</strong><span>Complemento natural del Lead Scoring: de “quién merece atención” a “con qué evidencia y qué mensaje abrir”.</span></li>
+              <li><strong>Crisis</strong><span>Capacidad futura de concentrar el esfuerzo comercial donde hay señal real, sin aumentar plantilla.</span></li>
             </ul>
-            <button type="button" class="btn-ficha" data-ficha="encuestas">Ver ficha completa</button>
-          </div>
-        </details>
-
-        <div class="portfolio-group">
-          <h3>4 · Procesos de venta</h3>
-          <p>Lead, scoring y automatización Marketing — escala comercial sin más masa salarial</p>
-        </div>
-
-        <details class="acc">
-          <summary>
-            <span class="chev" aria-hidden="true">›</span>
-            <span class="acc-title">
-              <b>Syncform HubSpot</b>
-              <small>Automatización por cambios en catálogo formativo — Aumento de la capacidad operativa y eliminación de errores</small>
-            </span>
-            <span class="badge badge-ok">En uso</span>
-          </summary>
-          <div class="body">
-            <p>Automatiza tareas internas de Marketing al añadir/modificar/eliminar disciplina o programa, y al gestionar bajas/vacaciones de asesores comerciales.</p>
-            <div class="before-after">
-              <div class="ba before"><strong>Antes</strong>~45 min + checklist Excel frágil por ejecución.</div>
-              <div class="ba after"><strong>Ahora</strong>~5 min, centralizado, con validación en tiempo real, log y posibilidad de deshacer.</div>
-            </div>
-            <button type="button" class="btn-ficha" data-ficha="syncform">Ver ficha completa</button>
+            <button type="button" class="btn-ficha" data-ficha="signal">Ver ficha completa</button>
           </div>
         </details>
 
@@ -1162,13 +1021,13 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Migración al objeto Lead</b>
+              <b>5 · Migración al objeto Lead</b>
               <small>Precisión del funnel · 1 lead = 1 interés formativo</small>
             </span>
             <span class="badge badge-standby">Pendiente go-live</span>
           </summary>
           <div class="body">
-            <p>Infraestructura y procesos ya diseñados e implantados en HubSpot para migrar el engranaje comercial del Contacto al Lead. Pendiente de validación de Dirección de Marketing para “encender” el nuevo modelo (go-live portfolio venta: sep. 2026).</p>
+            <p>Infraestructura y procesos ya diseñados e implantados en HubSpot para migrar el engranaje comercial del Contacto al Lead. Pendiente de validación de Dirección de Marketing para “encender” el nuevo modelo.</p>
             <ul class="impact-list">
               <li><strong>Impacto</strong><span>Datos accionables por interés real; base correcta para scoring, asignación y conversión por producto/disciplina.</span></li>
             </ul>
@@ -1180,41 +1039,215 @@
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Cualificación y Lead Scoring</b>
-              <small>Optimización del esfuerzo comercial hacia leads de mayor valor</small>
+              <b>6 · CDM-Manager</b>
+              <small>Cupo de Contactos de Marketing — alcance de nurturing + control de coste SaaS</small>
             </span>
             <span class="badge badge-proc">En desarrollo</span>
           </summary>
           <div class="body">
-            <p>Arquitectura de puntuación y segmentación automatizada (workflows, campos calculados, formularios). Score dinámico desde la primera solicitud; segmenta propensión a matriculación. En desarrollo según ficha de capitalización; activación plena tras validación de Marketing.</p>
+            <p>App propia (FastAPI + React) para la rotación mensual de Contactos de Marketing en HubSpot bajo cupo objetivo (~20.000) y techo duro (~21.000). Propone altas/bajas, dry-run y confirmación; protege segmentos de alto valor (venta, nurturing, alumnos, tutores) sin mutar propiedades de contacto.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Menos tiempo en leads fríos; mejor alineación Marketing–Ventas; más eficiencia sin incrementar masa salarial.</span></li>
+              <li><strong>Impacto</strong><span>Más capacidad de captación/nurturing dentro del cupo contratado; evita sobrecoste y pérdida de cobertura por rotación desgobernada.</span></li>
+              <li><strong>Crisis</strong><span>Cada asiento de marketing contact cuenta: prioriza a quién mantener en el embudo activo.</span></li>
             </ul>
-            <button type="button" class="btn-ficha" data-ficha="scoring">Ver ficha completa</button>
+            <button type="button" class="btn-ficha" data-ficha="cdm">Ver ficha completa</button>
           </div>
         </details>
-
-        <div class="portfolio-group">
-          <h3>5 · Procesos tutores</h3>
-          <p>Gobierno del claustro en HubSpot + proyección de demanda docente</p>
-        </div>
 
         <details class="acc">
           <summary>
             <span class="chev" aria-hidden="true">›</span>
             <span class="acc-title">
-              <b>Negocio Tutor y objetivos de reclutamiento</b>
+              <b>7 · Deal Loss Agent</b>
+              <small>Roadmap · Patrones de deals perdidos para mejorar captación y cierre</small>
+            </span>
+            <span class="badge badge-research">En investigación</span>
+          </summary>
+          <div class="body">
+            <p><strong>No implantado.</strong> Evaluación del agente nativo HubSpot (Deal Loss Agent y equivalentes) que analiza deals closed-lost y superficie patrones accionables. Es <strong>insight para decisiones</strong>, no ejecución automática de ventas.</p>
+            <ul class="impact-list">
+              <li><strong>Orden</strong><span>Tras CDM: primero capacidad operativa de Marketing/Ventas; luego aprendizaje de pérdidas para mejorar el funnel.</span></li>
+              <li><strong>Crisis</strong><span>Entender por qué se pierde ayuda a no repetir errores cuando cada oportunidad cuenta.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="dealLoss">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>8 · wiki-Hubspot</b>
+              <small>Mapa vivo del CRM — seguro operativo de captación y automatismos</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Cartografía qué hay en HubSpot, cómo está conectado y qué se rompe si se toca. Caso real: normalizar &gt;140.000 teléfonos/WhatsApp en 5 días (&gt;95% fiabilidad estimada).</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Análisis de impacto de días/semanas → minutos/horas. Más mejoras CRM al año con el mismo equipo.</span></li>
+              <li><strong>Seguro</strong><span>Reduce riesgo de romper captación, envíos o reglas comerciales.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="wiki">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>8b · Hubspot-Auditor</b>
+              <small>Auditoría forense — quién cambió qué y qué se rompe si se toca</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Complementa a wiki-Hubspot. Catálogo operativo: 4 objetos CRM, ~1.480 propiedades, 167 workflows (ampliable).</p>
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>Análisis de impacto o bug forense: 1–3 días de ida y vuelta entre equipos.</div>
+              <div class="ba after"><strong>Ahora</strong>Minutos/horas; diagnóstico con evidencia (~15–60 min en casos recurrentes).</div>
+            </div>
+            <button type="button" class="btn-ficha" data-ficha="auditor">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>9 · Oráculo</b>
+              <small>Mapa vivo del datawarehouse — multiplica capacidad sobre DWH y Lumen</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Mapa vivo del datawarehouse y Lumen: qué información existe, cómo se relaciona y qué hay que tocar (o no) para construir sin improvisar. Base de SentinEX, Comisiones y Calendario lectivo.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Reduce días/semanas de descubrimiento técnico a horas de consulta.</span></li>
+              <li><strong>Grupo</strong><span>Replicable como “wiki-DWH”; Innovación/BI como consultor interno.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="oraculo">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>10 · Koalify (y similares)</b>
+              <small>Roadmap · Higiene del embudo de captación — deduplicación HubSpot</small>
+            </span>
+            <span class="badge badge-research">En investigación</span>
+          </summary>
+          <div class="body">
+            <p><strong>No implantado.</strong> Evaluación de herramientas nativas HubSpot (p. ej. Koalify) para detectar y fusionar duplicados con reglas controladas. Objetivo: <strong>higiene del embudo de captación</strong> — menos leads fantasma, menos reporting sucio, menos esfuerzo comercial perdido en registros duplicados.</p>
+            <ul class="impact-list">
+              <li><strong>Relación</strong><span>Complementa wiki-Auditor y la limpieza de teléfonos: calidad de datos = capacidad comercial usable.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="koalify">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>11 · Negocio Tutor y objetivos de reclutamiento</b>
               <small>Ciclo de vida docente + anticipación de cupo frente a matrícula</small>
             </span>
             <span class="badge badge-ok">En uso</span>
           </summary>
           <div class="body">
-            <p>Pipeline Negocio Tutor en HubSpot (recruiting → colaboración → baja) con formularios y automatizaciones; cuadro de objetivos (Sheets + API CRM) que cruza matrícula con necesidad docente por bloque. Escala: ~4.600 negocios tutor, ~685 Acuerdos Marco, miles de propuestas/curso.</p>
+            <p>Pipeline Negocio Tutor en HubSpot + cuadro de objetivos (Sheets + API CRM). Escala: ~4.600 negocios tutor, ~685 Acuerdos Marco, miles de propuestas/curso.</p>
             <ul class="impact-list">
-              <li><strong>Impacto</strong><span>Más tutores y participaciones con menos operativa manual; anticipación de carencias ante picos de venta.</span></li>
-              <li><strong>Futuro</strong><span>Migración del cuadro de objetivos a Lumen.</span></li>
+              <li><strong>Impacto</strong><span>Más tutores y participaciones con menos operativa; anticipación de carencias ante picos de venta.</span></li>
             </ul>
             <button type="button" class="btn-ficha" data-ficha="tutores">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>12 · Comisiones en Lumen</b>
+              <small>Transparencia, liquidación y regularizaciones automáticas</small>
+            </span>
+            <span class="badge badge-proc">En proceso</span>
+          </summary>
+          <div class="body">
+            <p>Cálculo automático de comisiones y regularizaciones + evolución en tiempo real (bruto / regularizado / neto) para comerciales y managers.</p>
+            <ul class="impact-list">
+              <li><strong>Impacto</strong><span>Menos horas en Excel, cero errores de cálculo, menos opacidad; mayor motivación comercial.</span></li>
+            </ul>
+            <button type="button" class="btn-ficha" data-ficha="comisiones">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>13 · Syncform HubSpot</b>
+              <small>Automatización por cambios en catálogo formativo</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Automatiza tareas internas de Marketing al añadir/modificar/eliminar disciplina o programa, y al gestionar bajas/vacaciones de asesores.</p>
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>~45 min + checklist Excel frágil por ejecución.</div>
+              <div class="ba after"><strong>Ahora</strong>~5 min, centralizado, con validación, log y posibilidad de deshacer.</div>
+            </div>
+            <button type="button" class="btn-ficha" data-ficha="syncform">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>14 · TW-Scheduler</b>
+              <small>Tips &amp; Warnings a tutores — ahorro operativo recurrente</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <div class="before-after">
+              <div class="ba before"><strong>Antes</strong>15 min – 2 h cada 5–6 semanas (~20–22 bloques).</div>
+              <div class="ba after"><strong>Ahora</strong>~5–10 minutos, una sola vez al año.</div>
+            </div>
+            <button type="button" class="btn-ficha" data-ficha="tw">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>15 · Encuestas semanales</b>
+              <small>Feedback alumno ligado al ritmo lectivo</small>
+            </span>
+            <span class="badge badge-ok">En uso</span>
+          </summary>
+          <div class="body">
+            <p>Configura el formulario de encuesta, historial, estadísticas y exportación CSV. Cierra el ciclo comunicación docente → medición del pulso.</p>
+            <button type="button" class="btn-ficha" data-ficha="encuestas">Ver ficha completa</button>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>
+            <span class="chev" aria-hidden="true">›</span>
+            <span class="acc-title">
+              <b>16 · Calendario lectivo en Lumen</b>
+              <small>Gestión auditable de convocatorias y lecciones</small>
+            </span>
+            <span class="badge badge-proc">En proceso</span>
+          </summary>
+          <div class="body">
+            <p>Sustituye mantenimiento manual (Sheets + vERP) por gestión en Lumen: fechas, regeneración de lecciones respetando descansos, roles.</p>
+            <button type="button" class="btn-ficha" data-ficha="calendario">Ver ficha completa</button>
           </div>
         </details>
 
@@ -1223,7 +1256,7 @@
       <div class="panel" style="margin-top:1rem">
         <h3>Escalabilidad sin incrementar masa salarial</h3>
         <p>
-          Con los sistemas implantados y en proceso, si mañana se duplica el volumen de interesados, alumnos o tutores, la infraestructura absorbe el impacto de forma automática: no hace falta contratar más personal administrativo ni de soporte en la misma proporción.
+          Con los sistemas implantados, en proceso y en investigación de refuerzo comercial, si mañana se duplica el volumen de interesados, alumnos o tutores, la infraestructura absorbe el impacto de forma automática: no hace falta contratar más personal administrativo ni de soporte en la misma proporción. En crisis comercial, eso es capacidad de reaccionar sin convertir el puesto en un gasto prescindible.
         </p>
       </div>
     </section>
@@ -1263,8 +1296,12 @@
           </thead>
           <tbody>
             <tr>
-              <td>Diseño de procesos en HubSpot (captación, scoring, ciclo docente)</td>
+              <td>Diseño de procesos en HubSpot (captación, scoring, ciclo docente, cupo CDM)</td>
               <td>Escuelas que unifican o modernizan CRM comercial/académico</td>
+            </tr>
+            <tr>
+              <td>Roadmap agentes comerciales + higiene de embudo (evaluación, no implantado)</td>
+              <td>Capacidad de adoptar IA CRM / deduplicación con criterio propio, sin dependencia consultora</td>
             </tr>
             <tr>
               <td>Wiki-CRM + auditoría forense de automatismos</td>
@@ -1624,7 +1661,61 @@
             <h4>Capacidad nueva</h4>
             <p>Convierte la cualificación de un criterio subjetivo/manual en un sistema repetible, medible y mejorable.</p>
             <h4>Próximo refuerzo bajo estudio</h4>
-            <p>Evaluar un bot ya existente, capaz de conectarse al CRM, diseñado para la detección y ranking de intención de compra a partir de señales e interacciones en HubSpot, para complementar o superar el scoring actual (siempre con supervisión humana: propone borrador de email personalizado, pero no realiza envíos sin validación previa).</p>`
+            <p><strong>En investigación (no implantado):</strong> Signal Prospector y agentes similares de señales de intención — ver ficha “Signal Prospector”. Complementan este scoring con ranking por señal y borrador de primer contacto; <strong>nunca envían sin OK humano</strong>.</p>`
+        },
+        signal: {
+          title: "Signal Prospector (y similares)",
+          sub: "En investigación · No implantado · Refuerzo de Lead Scoring y primer contacto",
+          html: `
+            <h4>Estado</h4>
+            <p><strong>En investigación. No está implantado en Animum.</strong> Forma parte del roadmap de refuerzo comercial del puesto de Innovación y BI: evaluar agentes que detectan intención, rankean y preparan el primer toque bajo supervisión humana.</p>
+            <h4>Qué aportaría</h4>
+            <p>Localizar cuentas y personas con señales recientes de intención en CRM/producto, rankearlas dentro de un motion (net-new, expansión, etc.) y <strong>borrador</strong> de primer contacto. El agente no envía, no enrola en secuencias y no cambia ownership sin confirmación.</p>
+            <h4>Relación con Lead Scoring</h4>
+            <p>El scoring responde “quién merece atención”; este tipo de agente añade “con qué evidencia de intención y qué mensaje abrir”. Encaja como capa encima del modelo de cualificación en desarrollo.</p>
+            <h4>Por qué importa en crisis comercial</h4>
+            <p>Concentrar el tiempo escaso de Ventas donde hay señal real, sin aumentar plantilla — inversión en capacidad de captación, no en gasto de herramienta aislada.</p>`
+        },
+        cdm: {
+          title: "CDM-Manager",
+          sub: "En desarrollo · Cupo de Contactos de Marketing HubSpot (~20.000 / techo ~21.000)",
+          html: `
+            <h4>Qué es</h4>
+            <p>Aplicación propia (FastAPI + React) para la rotación mensual de Contactos de Marketing (CDM) en HubSpot. Propone quién entra/sale del cupo, permite dry-run y confirmación controlada, y aplica altas/bajas vía listas operativas e historial y workflows — <strong>sin mutar propiedades de contacto</strong>.</p>
+            <h4>Problema de negocio</h4>
+            <p>El cupo de marketing contacts es coste y capacidad a la vez: superar el techo es sobrecoste; rotar mal es perder cobertura de nurturing y captación sobre contactos de valor.</p>
+            <h4>Impacto</h4>
+            <ul>
+              <li>Control de coste SaaS bajo techo duro.</li>
+              <li>Prioriza segmentos “salvoconducto” (venta, nurturing, alumnos, tutores, etc.) + pool por score.</li>
+              <li>En crisis: cada asiento del embudo activo cuenta para Marketing y Ventas.</li>
+            </ul>
+            <h4>Estado</h4>
+            <p>En desarrollo (ciclo propose → dry-run → confirm; sandbox antes de producción).</p>`
+        },
+        dealLoss: {
+          title: "Deal Loss Agent (y similares)",
+          sub: "En investigación · No implantado · Insight sobre deals perdidos",
+          html: `
+            <h4>Estado</h4>
+            <p><strong>En investigación. No está implantado en Animum.</strong> Evaluación del Deal Loss Agent de HubSpot (y equivalentes) como fuente de patrones sobre deals closed-lost.</p>
+            <h4>Qué aportaría</h4>
+            <p>Analizar cómo y por qué se marcan deals como perdidos en una ventana temporal, superficies patrones y recomendaciones. Es <strong>insight para toma de decisiones y mejora del funnel</strong>, no un cierre automático de ventas.</p>
+            <h4>Por qué va después de CDM</h4>
+            <p>Primero capacidad operativa de captación/nurturing (cupo CDM y scoring/Lead); después aprendizaje de pérdidas para no repetir errores cuando cada oportunidad cuenta.</p>
+            <h4>Crisis comercial</h4>
+            <p>Entender pérdidas sistemáticas convierte el puesto en inversión de aprendizaje comercial, no solo en mantenimiento de herramientas.</p>`
+        },
+        koalify: {
+          title: "Koalify (y similares)",
+          sub: "En investigación · No implantado · Higiene del embudo de captación",
+          html: `
+            <h4>Estado</h4>
+            <p><strong>En investigación. No está implantado en Animum.</strong> Evaluación de deduplicación nativa HubSpot (p. ej. Koalify: reglas, merge vía workflows, objetos custom).</p>
+            <h4>Qué aportaría</h4>
+            <p><strong>Higiene del embudo de captación:</strong> menos registros duplicados, menos leads fantasma, menos reporting sucio y menos tiempo comercial perdido en fichas repetidas. Encaja con wiki-Auditor y con la limpieza de teléfonos ya realizada.</p>
+            <h4>Crisis comercial</h4>
+            <p>Datos limpios = esfuerzo de Ventas y Marketing aplicado a personas reales, no a ruido del CRM.</p>`
         }
       };
 

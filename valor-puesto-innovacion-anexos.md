@@ -144,17 +144,66 @@ Gobierno del claustro / docentes asociados y planificación de capacidad ante ve
 
 ---
 
-## A6. Tabla resumen de impacto (para control de gestión)
+## A6. Tabla resumen de impacto (orden crisis comercial / captación)
 
-| Iniciativa | Tipo de valor | Indicador cualitativo / cuantitativo |
-|---|---|---|
-| TW-Scheduler | Ahorro recurrente | De 15 min–2 h / ciclo → 5–10 min / año |
-| Limpieza teléfonos (wiki-HS) | Calidad datos + ventas | 140k+ contactos, >40 países, 5 días; >95 % fiabilidad estimada |
-| Syncform | Ahorro + menos errores | ~45 min → ~5 min por cambio de programa |
-| SentinEX | Protección de ingresos | Prioridad + riesgo de baja; ejecución diaria automática |
-| Comisiones Lumen | Control + ahorro | Consulta en tiempo real + **cálculo automático de regularizaciones** |
-| Lead / scoring / Mk | Escala comercial | Menos manual; pipeline más gobernado |
-| Negocio Tutor / objetivos | Escala académica | Más volumen de tutores con menos operativa |
+| # | Iniciativa | Tipo de valor | Indicador / nota |
+|---|---|---|---|
+| 1 | SentinEX | Protección de ingresos | Riesgo de baja; ejecución diaria |
+| 2 | Teléfonos / WhatsApp | Capacidad comercial | 140k+ contactos, 5 días; >95 % fiabilidad; +20 % contacto útil est. |
+| 3 | Lead Scoring | Priorización Ventas | En desarrollo; foco en leads de mayor valor |
+| 4 | Signal Prospector (y sim.) | Roadmap captación | **En investigación · no implantado**; señales + borrador; sin envío sin OK |
+| 5 | Objeto Lead | Precisión del funnel | Desarrollado; pendiente go-live Marketing |
+| 6 | CDM-Manager | Capacidad + coste SaaS | En desarrollo; cupo ~20k / techo ~21k Contactos de Marketing |
+| 7 | Deal Loss Agent (y sim.) | Insight pérdidas | **En investigación · no implantado**; patrones closed-lost |
+| 8 | wiki-Hubspot + Auditor | Seguro CRM captación | En uso; impacto días→minutos |
+| 9 | Oráculo | Multiplicador DWH/Lumen | En uso |
+| 10 | Koalify (y sim.) | Higiene embudo captación | **En investigación · no implantado**; menos duplicados / leads fantasma |
+| 11 | Negocio Tutor / objetivos | Escala entrega docente | En uso; ~4,6k negocios tutor |
+| 12 | Comisiones Lumen | Motivación + control | En proceso; bruto/regularizado/neto |
+| 13 | Syncform | Velocidad oferta Mk | En uso; ~45 min → ~5 min |
+| 14 | TW-Scheduler | Ahorro operativo CX | En uso; 15 min–2 h / ciclo → 5–10 min / año |
+| 15 | Encuestas semanales | Medición pulso | En uso |
+| 16 | Calendario lectivo Lumen | Operativa académica | En proceso |
+
+---
+
+## A9. CDM-Manager (cupo Contactos de Marketing)
+
+**Área:** Innovación y BI · HubSpot / Marketing  
+**Estado:** en desarrollo  
+
+### Problema
+El cupo de Contactos de Marketing es a la vez **coste SaaS** y **capacidad de nurturing/captación**. Superar el techo encarece; rotar mal pierde cobertura sobre contactos de valor.
+
+### Qué hace
+App propia (FastAPI + React): ciclo propose → dry-run → confirm de altas/bajas bajo objetivo ~20.000 / techo ~21.000; prioriza segmentos de alto valor; escribe solo vía listas ops/historial y workflows (sin mutar propiedades de contacto).
+
+### Valor en crisis
+Cada asiento del embudo activo cuenta: más alcance de Marketing/Ventas dentro del cupo contratado.
+
+---
+
+## A10. Signal Prospector y agentes de intención (investigación)
+
+**Estado:** **en investigación · no implantado**  
+
+Evaluación de agentes (p. ej. Signal Prospector) que rankean señales de intención y preparan borradores de primer contacto. **Nunca envían sin OK humano.** Relacionado con Lead Scoring: refuerzo futuro de capacidad comercial sin más plantilla.
+
+---
+
+## A11. Deal Loss Agent (investigación)
+
+**Estado:** **en investigación · no implantado**  
+
+Evaluación del agente HubSpot Deal Loss (y equivalentes) para patrones de deals closed-lost. Es **insight** para mejorar captación/cierre, no ejecución automática. En el relato directivo va **después de CDM**: primero capacidad operativa, luego aprendizaje de pérdidas.
+
+---
+
+## A12. Koalify y deduplicación (investigación)
+
+**Estado:** **en investigación · no implantado**  
+
+Evaluación de deduplicación nativa HubSpot (p. ej. Koalify). Objetivo: **higiene del embudo de captación** — menos leads fantasma, menos reporting sucio, menos esfuerzo comercial perdido en duplicados. Complementa wiki-Auditor y la limpieza de teléfonos.
 
 ---
 
@@ -169,14 +218,15 @@ En la lógica de este documento, ese coste es un **insumo de productividad** del
 
 Slides sugeridas (máx. 8–10):
 
-1. Título: Valor del puesto de Innovación operativa  
-2. El problema: escala sin headcount  
-3. Mi rol (1 frase) + equipo de 3 (contexto breve)  
-4. Tres pruebas de valor (T&W / Syncform / teléfonos)  
-5. Protección de ingresos (SentinEX) + control (comisiones)  
-6. Por qué no es prescindible (efecto palanca)  
-7. Transferible a AD Education (capacidades, no “copiar Animum”)  
-8. Cierre: mantener e invertir en la función  
+1. Título: Valor del puesto en crisis comercial (inversión, no gasto)  
+2. El problema: captar y retener sin crecer en plantilla al mismo ritmo  
+3. Mi rol (1 frase) + equipo de 3  
+4. Bloque comercial: SentinEX → teléfonos → scoring → Lead → CDM  
+5. Roadmap etiquetado: Signal / Deal Loss / Koalify (investigación, no implantado)  
+6. Seguro CRM (wiki + Auditor) + Oráculo  
+7. Por qué no es prescindible (efecto palanca Ventas/Marketing)  
+8. Transferible a AD Education  
+9. Cierre: mantener e invertir en la función  
 
 ---
 

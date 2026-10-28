@@ -15,7 +15,7 @@ Cada semana se registra el tiempo dedicado a proyectos. Este documento explica, 
 1. **Qué hago** en el día a día.
 2. **Qué utilidad concreta** aporta eso a Animum.
 3. **Qué valor podría aportar** al grupo AD Education.
-4. **Por qué esta labor no es un gasto prescindible**, sino una inversión que multiplica la capacidad operativa de varias áreas con un solo perfil.
+4. **Por qué esta labor no es un gasto prescindible**, sino una **inversión útil ahora más que nunca** en crisis comercial: multiplica captación, retención y control con un solo perfil.
 
 ---
 
@@ -40,48 +40,43 @@ Mi trabajo convierte esos cuellos de botella en **procesos estables, auditables 
 
 ---
 
-## 4. Valor para Animum hoy (casos medibles)
+## 4. Valor para Animum (arco comercial en crisis)
 
-### 4.1. Tips & Warnings a tutores (TW-Scheduler)
+Orden orientado a dirección en **presión comercial**: proteger/aumentar ingresos y capacidad de Ventas/Marketing — incluyendo lo en proceso y el roadmap etiquetado. Detalle: `valor-puesto-innovacion-anexos.md` y briefing HTML.
 
-| Antes | Ahora |
-|---|---|
-| Preparación y envío semanal de correos a tutores de ~20–22 bloques formativos a la vez. | App interna conectada al CRM. |
-| Luego: más de 20 automatizaciones en HubSpot (una por bloque); cada 5–6 semanas, entre **15 minutos y 2 horas** solo de preparación, según bloques que arrancaran. | Preparación: **5–10 minutos, una sola vez al año**. |
+### 4.1. Protección de ingresos — SentinEX (en proceso)
 
-**Impacto:** se libera tiempo recurrente del área académica/CX y se reduce el riesgo de olvidos o desajustes de calendario (festivos, tipo de tutor, bloque formativo).
+Cada ticket se clasifica y prioriza con contexto 360º del alumno y se valora **riesgo de baja** (ejecución diaria automática). No solo ahorra triaje: **protege ingresos** al anticipar bajas.
 
-### 4.2. Calidad de teléfonos y WhatsApp en el CRM (wiki-Hubspot)
+### 4.2. Capacidad comercial — teléfonos / WhatsApp (finalizado)
 
-En **5 días** se revisaron las propiedades de teléfono y WhatsApp de **más de 140.000 contactos** de **más de 40 países**: formato, longitud, estructura, país (IP / residencia), números múltiples en un mismo campo, entradas vacías o falsas, y asignación de prefijo internacional cuando faltaba.
+En **5 días**, >**140.000** contactos / >**40** países; fiabilidad estimada **>95 %**. Más contacto útil (est. **+20 %**) → más matrículas con el mismo equipo de Ventas (habilitado por wiki-Hubspot).
 
-**Impacto para Ventas:** pueden segmentar contactos con teléfono/WhatsApp fiable (estimación de corrección **superior al 95 %**) y concentrar el esfuerzo comercial donde hay probabilidad real de contacto.
+### 4.3. Priorización — Lead Scoring (en desarrollo) + roadmap Signal (investigación)
 
-### 4.3. Altas y cambios de programas formativos (Syncform HubSpot)
+Score dinámico para concentrar esfuerzo en leads de mayor valor. **En investigación (no implantado):** agentes tipo Signal Prospector — señales de intención, ranking y borrador de primer contacto; **nunca envían sin OK humano**.
 
-| Antes | Ahora |
-|---|---|
-| Marketing: ~**45 minutos** por ejecución + Excel-checklist para no olvidar pasos en hojas, propiedades, formularios, workflows, secuencias y correos. | Ejecución automática en ~**5 minutos**, con histórico (log) y posibilidad de **deshacer** una ejecución. |
+### 4.4. Funnel — objeto Lead (pendiente go-live) + CDM-Manager (en desarrollo)
 
-**Impacto:** menos tiempo y, sobre todo, **menos errores** al lanzar o modificar oferta formativa en el CRM.
+- **Lead:** 1 lead = 1 interés formativo; infraestructura lista; falta validación Marketing para cutover.  
+- **CDM-Manager:** rotación del cupo de Contactos de Marketing (~20.000 / techo ~21.000): alcance de nurturing **y** control de coste SaaS.
 
-### 4.4. Priorización de tickets y riesgo de abandono (SentinEX)
+### 4.5. Insight y higiene (investigación, no implantado)
 
-Capacidad **nueva** (antes no existía de forma sistemática): cada ticket se clasifica y prioriza con contexto 360º del alumno (historial, entregas, pagos, etc.) y se valora **riesgo de baja**. La revisión puede ser **diaria y automática**.
+- **Deal Loss Agent** (y sim.): patrones de deals perdidos → mejoras futuras (después de CDM: primero capacidad, luego insight).  
+- **Koalify** (y sim.): **higiene del embudo de captación** (menos duplicados / leads fantasma).
 
-**Impacto:** no solo ahorra triaje manual; **protege ingresos** al señalar antes a los alumnos en riesgo para que CX actúe a tiempo.
+### 4.6. Seguro CRM y multiplicador de datos (en uso)
 
-### 4.5. Comisiones: evolución y regularización (Lumen)
+**wiki-Hubspot + Hubspot-Auditor:** evitan romper captación al cambiar el CRM. **Oráculo:** mapa del DWH/Lumen que acelera SentinEX, comisiones y calendario.
 
-Hasta ahora, las regularizaciones se hacían **manualmente** y los comerciales no disponían de una herramienta para ver en tiempo real la evolución de sus comisiones.
+### 4.7. Escala operativa (en uso / en proceso)
 
-**Ahora:** consulta en tiempo real **y cálculo automático de las regularizaciones** (ciclo liquidación / evolución / regularización por churn), con trazabilidad y visibilidad según rol (asesora vs. sales manager).
+Tutores (Negocio Tutor), comisiones Lumen, Syncform (~45 min → ~5 min al cambiar oferta), TW-Scheduler, encuestas, calendario lectivo: detalle en anexos. Soportan entrega y control, con menor peso P&L inmediato que el bloque 4.1–4.5.
 
-**Impacto:** menos trabajo manual de liquidación, menos disputas por opacidad, y un control de negocio alineado con lo que realmente se ha ganado y regularizado.
+### 4.8. Expertise HubSpot
 
-### 4.6. Expertise en HubSpot (además de las apps)
-
-Más allá de las aplicaciones, planifico y construyo en HubSpot la mejora de procesos de otras áreas: objetos y propiedades personalizadas, workflows, secuencias, formularios, correos inteligentes, cualificación y lead scoring, objeto Lead, ciclo de vida del tutor (Negocio Tutor), etc. Eso es **infraestructura comercial y académica ya en uso**, no experimentos.
+Infraestructura comercial y académica propia (objetos, workflows, Lead, scoring, Negocio Tutor, CDM…): **activo de Animum**, no solo “usar un SaaS”.
 
 ---
 
@@ -130,11 +125,11 @@ Animum, por su modelo online y su madurez digital operativa, puede actuar como *
 
 ### ¿Qué valor diferencial aporto hoy a Animum?
 
-Convierto problemas operativos recurrentes de otras áreas en sistemas estables: menos horas manuales, menos errores, más capacidad de escala (ventas, tutores, CX) y nuevas palancas de control (riesgo de abandono, comisiones, calidad de datos CRM).
+En crisis comercial: protejo ingresos (SentinEX), multiplico capacidad de Ventas/Marketing (teléfonos, scoring, Lead, CDM) y dejo roadmap etiquetado de agentes e higiene de embudo — sistemas estables, no experimentos opacos.
 
 ### ¿Qué valor podría aportar en el futuro próximo al grupo?
 
-Las mismas capacidades, empaquetadas como método y acompañamiento: priorizar cuellos de botella, automatizar, documentar y dejar procesos que no dependan de una sola persona. Especialmente útil allí donde aún hay mucha Excel y poca sistematización.
+Las mismas capacidades + criterio para adoptar IA CRM y gobierno de datos: priorizar cuellos de botella, automatizar, documentar y transferir playbooks sin consultarías repetidas.
 
 ### ¿Merece la pena mantener e invertir en este puesto y esta labor?
 
